@@ -1,5 +1,6 @@
 import '../styles/Contact.css'
 import { useState, useEffect, useRef } from "react"
+import emailjs from "@emailjs/browser";
 
 type FormState = {
   name: string;
@@ -36,9 +37,9 @@ const CONTACT_METHODS = [
       </svg>
     ),
     label: "Email Us",
-    value: "hello@canopux.com",
+    value: "team@canopux.org",
     sub: "We reply within 30 minutes",
-    href: "mailto:hello@canopux.com",
+    href: "mailto:team@canopux.org",
   },
   {
     icon: (
@@ -64,16 +65,17 @@ const SERVICES = [
   "Technical Consulting",
 ];
 
-const BUDGETS = ["< $10k", "$10k–$50k", "$50k–$150k", "$150k+"];
+const BUDGETS = ["< ₹10k", "₹10k–₹50k", "₹50k–₹150k", "₹150k+"];
 
 const SOCIALS_ROW1 = [
-  { icon: "𝕏", label: "Twitter" },
-  { icon: "in", label: "LinkedIn" },
-  { icon: "gh", label: "GitHub" },
+  { icon: "𝕏", label: "Twitter", href: "https://x.com/Canopux_team" },
+  { icon: "in", label: "LinkedIn", href: "https://www.linkedin.com/company/canopux/" },
+  { icon: "gh", label: "GitHub", href: "https://github.com/Canopux-Official" },
 ];
+
 const SOCIALS_ROW2 = [
-  { icon: "dr", label: "Dribbble" },
-  { icon: "yt", label: "YouTube" },
+  { icon: "ig", label: "instagram", href: "https://www.instagram.com/canopux_team/" },
+  { icon: "fb", label: "Facebook", href: " https://www.facebook.com/profile.php?id=61573815500432" },
 ];
 
 export default function Contact() {
@@ -86,6 +88,7 @@ export default function Contact() {
   const [sending, setSending] = useState(false);
   const [charCount, setCharCount] = useState(0);
 
+
   const handleChange = (field: keyof FormState, val: string) => {
     setForm((p) => ({ ...p, [field]: val }));
 
@@ -94,15 +97,33 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) return;
 
     setSending(true);
 
-    setTimeout(() => {
-      setSending(false);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAIL_SERVICE,
+        import.meta.env.VITE_EMAIL_TEMPLATE,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          company: form.company,
+          service: form.service,
+          budget: form.budget,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAIL_PUBLIC
+      );
+
       setSubmitted(true);
-    }, 1600);
+    } catch (err) {
+      console.error("Email failed:", err);
+      alert("Something went wrong. Please try again.");
+    }
+
+    setSending(false);
   };
 
   return (
@@ -170,7 +191,7 @@ export default function Contact() {
                     Thanks for reaching out. One of our team members will be in touch within 30 minutes.
                   </p>
                   <div className="ct-success-badge">
-                    <span>🚀</span> We'll send a calendar invite to <strong>{form.email}</strong>
+                    <span>🚀</span> We'll send a mail to <strong>{form.email}</strong>
                   </div>
                 </div>
               ) : (
@@ -346,7 +367,7 @@ export default function Contact() {
                 {/* Row 1: 3 buttons */}
                 <div className="ct-social-row">
                   {SOCIALS_ROW1.map(s => (
-                    <a key={s.label} className="ct-social-btn" href="#">
+                    <a key={s.label} className="ct-social-btn" href={s.href}>
                       <span className="ct-social-icon">{s.icon}</span>
                       {s.label}
                     </a>
@@ -356,7 +377,7 @@ export default function Contact() {
                 {/* Row 2: 2 buttons centred */}
                 <div className="ct-social-row-2">
                   {SOCIALS_ROW2.map(s => (
-                    <a key={s.label} className="ct-social-btn" href="#">
+                    <a key={s.label} className="ct-social-btn" href={s.href}>
                       <span className="ct-social-icon">{s.icon}</span>
                       {s.label}
                     </a>

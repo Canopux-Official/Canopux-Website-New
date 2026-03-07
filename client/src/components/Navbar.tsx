@@ -4,17 +4,17 @@ import logo from '../assets/logo-black.png';
 
 // Map nav items to their section IDs (or external paths)
 const NAV_CONFIG: { label: string; sectionId?: string; href?: string }[] = [
-  { label: "Home",        sectionId: "home" },
-  { label: "Services",    sectionId: "services" },
-  { label: "Case Studies",href: "/case-studies" },   // opens new page
-  { label: "About Us",    sectionId: "about-us" },
-  { label: "Contact",     sectionId: "contact" },
+  { label: "Home", sectionId: "home" },
+  { label: "Services", sectionId: "services" },
+  { label: "Case Studies", href: "/case-studies" },   // opens new page
+  { label: "About Us", sectionId: "about-us" },
+  { label: "Contact", sectionId: "contact" },
 ];
 
 const Navbar: React.FC = () => {
-  const [scrolled,   setScrolled]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("Home");
-  const [menuOpen,   setMenuOpen]   = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Scroll shadow
   useEffect(() => {
@@ -103,11 +103,11 @@ const Navbar: React.FC = () => {
                   strokeLinecap="round" strokeLinejoin="round">
                   <defs>
                     <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#2dd4bf"/>
-                      <stop offset="100%" stopColor="#3b82f6"/>
+                      <stop offset="0%" stopColor="#2dd4bf" />
+                      <stop offset="100%" stopColor="#3b82f6" />
                     </linearGradient>
                   </defs>
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                 </svg>
               </div>
               <span>+91 82607 83152</span>
@@ -160,11 +160,11 @@ const Navbar: React.FC = () => {
                 strokeLinecap="round" strokeLinejoin="round">
                 <defs>
                   <linearGradient id="phoneGradMobile" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#2dd4bf"/>
-                    <stop offset="100%" stopColor="#3b82f6"/>
+                    <stop offset="0%" stopColor="#2dd4bf" />
+                    <stop offset="100%" stopColor="#3b82f6" />
                   </linearGradient>
                 </defs>
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               </svg>
             </div>
             <span>+91 82607 83152</span>
