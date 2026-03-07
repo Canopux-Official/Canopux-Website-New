@@ -112,6 +112,19 @@ export default function HeroSection() {
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
+const scrollToContact = () => {
+  const section = document.getElementById("contact");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const scrollToCaseStudies = () => {
+  const section = document.getElementById("case-studies");
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
   const services = [
     { icon: "🌐", label: "Web Development", color: "#2dd4bf" },
     { icon: "🤖", label: "AI & ML", color: "#3b82f6" },
@@ -223,13 +236,16 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div className="cta-wrap">
-            <button className="btn-primary">
+            <button className="btn-primary" onClick={scrollToContact}>
               <span>
                 Let's Collaborate
                 <span className="btn-arrow">→</span>
               </span>
             </button>
-            <button className="btn-secondary">Explore Our Work</button>
+
+            <button className="btn-secondary" onClick={scrollToCaseStudies}>
+              Explore Our Work
+            </button>
           </div>
 
           {/* Service tabs */}
