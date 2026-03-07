@@ -1,10 +1,11 @@
-import Navbar from "../components/navbar";
-import HeroSection from "../components/heroSection";
+import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import MarqueeSection from "../components/Marquee";
+import CaseStudy from "../components/CaseStudy";
 
 function HomePage() {
   return (
@@ -16,6 +17,8 @@ function HomePage() {
           <HeroSection />
         
           <MarqueeSection/>
+
+          <CaseStudy/>
 
           <Services/>
 
