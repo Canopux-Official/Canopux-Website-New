@@ -233,8 +233,15 @@ export default function Services() {
 
   return (
     <>
-      <section id="services" className="sv-root" ref={rootRef}>
-
+      <section
+        id="services"
+        className="sv-root"
+        ref={rootRef}
+        aria-label="Software development services offered by Canopux including web development AI machine learning automation and cloud engineering"
+      >
+        <h2 className="sr-only">
+          Software Development Services by Canopux including Web Development AI Machine Learning Cloud DevOps Data Engineering Cybersecurity Mobile Apps UI UX Design and Blockchain Development
+        </h2>
         {/* Background */}
         <div className="sv-bg-base" />
         <div className="sv-noise" />
@@ -279,7 +286,7 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="sv-feat-name">{cur.title}</div>
+              <h3 className="sv-feat-name">{cur.title}</h3>
               <div className="sv-feat-short">{cur.short}</div>
               <div className="sv-feat-desc">{cur.desc}</div>
 
@@ -342,11 +349,11 @@ export default function Services() {
                     />
                     <div className="sv-card-top">
                       <span className="sv-card-num">{s.num}</span>
-                      <div className="sv-card-icon">
+                      <div className="sv-card-icon" aria-hidden="true">
                         {s.icon(isActive ? s.accent : "#cbd5e1")}
                       </div>
                     </div>
-                    <div className="sv-card-name">{s.title}</div>
+                    <h3 className="sv-card-name">{s.title}</h3>
                     <div className="sv-card-short">{s.short}</div>
                     <div className="sv-card-bottom">
                       <span className="sv-card-tags-mini">

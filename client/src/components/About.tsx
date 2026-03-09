@@ -25,16 +25,16 @@ const VALUES = [
     desc: "We don't ship until it's right. Every line of code, every pixel, every deployment is reviewed with an engineer's eye and a designer's soul.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
-        <circle cx="20" cy="20" r="14" stroke="url(#vg1)" strokeWidth="1.4"/>
-        <circle cx="20" cy="20" r="5" stroke="url(#vg1)" strokeWidth="1.2"/>
-        <line x1="20" y1="4" x2="20" y2="10" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round"/>
-        <line x1="20" y1="30" x2="20" y2="36" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round"/>
-        <line x1="4" y1="20" x2="10" y2="20" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round"/>
-        <line x1="30" y1="20" x2="36" y2="20" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round"/>
-        <circle cx="20" cy="20" r="2" fill="url(#vg1)"/>
+        <circle cx="20" cy="20" r="14" stroke="url(#vg1)" strokeWidth="1.4" />
+        <circle cx="20" cy="20" r="5" stroke="url(#vg1)" strokeWidth="1.2" />
+        <line x1="20" y1="4" x2="20" y2="10" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round" />
+        <line x1="20" y1="30" x2="20" y2="36" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round" />
+        <line x1="4" y1="20" x2="10" y2="20" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round" />
+        <line x1="30" y1="20" x2="36" y2="20" stroke="url(#vg1)" strokeWidth="1.4" strokeLinecap="round" />
+        <circle cx="20" cy="20" r="2" fill="url(#vg1)" />
         <defs>
           <linearGradient id="vg1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf"/><stop offset="100%" stopColor="#3b82f6"/>
+            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
           </linearGradient>
         </defs>
       </svg>
@@ -46,10 +46,10 @@ const VALUES = [
     desc: "Speed without stability is just chaos. We move at startup velocity while maintaining enterprise-grade reliability across every system we build.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
-        <path d="M22 4L8 22h12l-2 14 14-18H20L22 4z" stroke="url(#vg2)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M22 4L8 22h12l-2 14 14-18H20L22 4z" stroke="url(#vg2)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
         <defs>
           <linearGradient id="vg2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf"/><stop offset="100%" stopColor="#3b82f6"/>
+            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
           </linearGradient>
         </defs>
       </svg>
@@ -61,12 +61,12 @@ const VALUES = [
     desc: "No black boxes. You see every decision, every trade-off, every reason. We treat clients as intelligent partners, not stakeholders to manage.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
-        <path d="M20 8C12 8 5 14 5 20s7 12 15 12 15-6 15-12S28 8 20 8z" stroke="url(#vg3)" strokeWidth="1.4"/>
-        <circle cx="20" cy="20" r="5" stroke="url(#vg3)" strokeWidth="1.4"/>
-        <circle cx="20" cy="20" r="1.5" fill="url(#vg3)"/>
+        <path d="M20 8C12 8 5 14 5 20s7 12 15 12 15-6 15-12S28 8 20 8z" stroke="url(#vg3)" strokeWidth="1.4" />
+        <circle cx="20" cy="20" r="5" stroke="url(#vg3)" strokeWidth="1.4" />
+        <circle cx="20" cy="20" r="1.5" fill="url(#vg3)" />
         <defs>
           <linearGradient id="vg3" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf"/><stop offset="100%" stopColor="#3b82f6"/>
+            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
           </linearGradient>
         </defs>
       </svg>
@@ -78,10 +78,10 @@ const VALUES = [
     desc: "We think like co-founders, not contractors. Your problems become our problems. Your wins are celebrated like our own milestones.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
-        <path d="M20 4l4 8h9l-7 6 3 9-9-5-9 5 3-9-7-6h9L20 4z" stroke="url(#vg4)" strokeWidth="1.4" strokeLinejoin="round"/>
+        <path d="M20 4l4 8h9l-7 6 3 9-9-5-9 5 3-9-7-6h9L20 4z" stroke="url(#vg4)" strokeWidth="1.4" strokeLinejoin="round" />
         <defs>
           <linearGradient id="vg4" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf"/><stop offset="100%" stopColor="#3b82f6"/>
+            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
           </linearGradient>
         </defs>
       </svg>
@@ -103,8 +103,15 @@ export default function About() {
     <>
 
       {/* PART 1: DARK HERO  */}
-      <section id="about-us" className="ab-hero" ref={rootRef}>
-
+      <section
+        id="about-us"
+        className="ab-hero"
+        ref={rootRef}
+        aria-label="About Canopux digital engineering company building AI software cloud infrastructure and modern applications"
+      >
+        <h2 className="sr-only">
+          About Canopux software engineering company specializing in AI systems cloud infrastructure web development and digital product engineering
+        </h2>
         {/* Background layers */}
         <div className="ab-hero-mesh" />
         <div className="ab-hero-dots" />
@@ -131,11 +138,11 @@ export default function About() {
 
             {/* LEFT */}
             <div className={`ab-hero-left${visible ? " in" : ""}`}>
-              <h1 className="ab-hero-h1">
-                We <span className="dim">don't just</span><br/>
-                <span className="grad">build software.</span><br/>
+              <h2 className="ab-hero-h1">
+                We <span className="dim">don't just</span><br />
+                <span className="grad">build software.</span><br />
                 We build leverage.
-              </h1>
+              </h2>
 
               <p className="ab-hero-p">
                 Canopux is a <strong>digital engineering firm</strong> — we partner with ambitious founders and enterprises to design, build, and scale systems that actually matter.
@@ -147,10 +154,10 @@ export default function About() {
               <div className="ab-caps-label">What we do</div>
 
               {[
-                { name: "AI & ML Systems",       tags: ["LLMs", "Pipelines"] },
-                { name: "Cloud & DevOps",        tags: ["AWS", "GCP", "CI/CD"] },
-                { name: "UI/UX Design",          tags: ["Systems", "Prototyping"] },
-                { name: "Data Engineering",      tags: ["Pipelines", "Analytics"] },
+                { name: "AI & ML Systems", tags: ["LLMs", "Pipelines"] },
+                { name: "Cloud & DevOps", tags: ["AWS", "GCP", "CI/CD"] },
+                { name: "UI/UX Design", tags: ["Systems", "Prototyping"] },
+                { name: "Data Engineering", tags: ["Pipelines", "Analytics"] },
               ].map((cap, i) => (
                 <div className="ab-cap-row" key={i} style={{ transitionDelay: `${0.25 + i * 0.06}s` }}>
                   <span className="ab-cap-name">{cap.name}</span>
@@ -189,7 +196,7 @@ export default function About() {
               <span className="ab-section-label-text">Our Principles</span>
             </div>
             <h2 className="ab-values-heading">
-              The way we<br/>think and work
+              The way we<br />think and work
             </h2>
             <p className="ab-values-sub">
               Four principles we refuse to compromise on — no matter the deadline, the budget, or the ask.
@@ -211,7 +218,7 @@ export default function About() {
               >
                 <div className="ab-val-icon-box">{v.icon}</div>
                 <div className="ab-val-body">
-                  <div className="ab-val-title">{v.title}</div>
+                  <h3 className="ab-val-title">{v.title}</h3>
                   <div className="ab-val-desc">{v.desc}</div>
                 </div>
                 <div className="ab-val-num-badge">{v.num}</div>
@@ -225,10 +232,10 @@ export default function About() {
           <div className="ab-mission-inner">
             <div className="ab-mission-left">
               <div className="ab-mission-left-label">Our Mission</div>
-              <div className="ab-mission-left-title">
-                Build things<br/>
+              <h2 className="ab-mission-left-title">
+                Build things<br />
                 <span className="mg">that last.</span>
-              </div>
+              </h2>
             </div>
             <div className="ab-mission-right">
               <div className="ab-mission-quote">
@@ -240,7 +247,7 @@ export default function About() {
               <div className="ab-mission-author">
                 <div className="ab-mission-avatar">PS</div>
                 <div>
-                  <div className="ab-mission-author-name">Pratik Sourav Panda</div>
+                  <strong className="ab-mission-author-name">Pratik Sourav Panda</strong>
                   <div className="ab-mission-author-title">Founder, Canopux</div>
                 </div>
               </div>

@@ -50,8 +50,8 @@ const CONTACT_METHODS = [
       </svg>
     ),
     label: "Headquarters",
-    value: "Bhubaneswar, 751001",
-    sub: " Odisha · India",
+    value: "Bhubaneswar, Odisha 751001",
+    sub: " · India",
     href: null,
   },
 
@@ -129,8 +129,15 @@ export default function Contact() {
   return (
     <>
 
-      <section id="contact" className="ct-root" ref={rootRef}>
-
+      <section
+        id="contact"
+        className="ct-root"
+        ref={rootRef}
+        aria-label="Contact Canopux software development company for AI development web development cloud DevOps and digital engineering projects"
+      >
+        <h2 className="sr-only">
+          Contact Canopux Software Development Company for AI, Web Development, Cloud DevOps, Mobile App Development and Digital Engineering Services
+        </h2>
         {/* ── BACKGROUND ── */}
         <div className="ct-bg-base" />
         <div className="ct-noise" />
@@ -182,132 +189,142 @@ export default function Contact() {
           <div className="ct-main">
 
             {/* ── FORM CARD ── */}
-            <div className={`ct-form-card${visible ? " in" : ""}`}>
-              {submitted ? (
-                <div className="ct-success">
-                  <div className="ct-success-icon">✓</div>
-                  <div className="ct-success-title">Message received!</div>
-                  <p className="ct-success-sub">
-                    Thanks for reaching out. One of our team members will be in touch within 30 minutes.
-                  </p>
-                  <div className="ct-success-badge">
-                    <span>🚀</span> We'll send a mail to <strong>{form.email}</strong>
+            <form
+              className={`ct-form-card${visible ? " in" : ""}`}
+              aria-label="Project inquiry form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+              }}
+            >              {submitted ? (
+              <div className="ct-success">
+                <div className="ct-success-icon">✓</div>
+                <div className="ct-success-title">Message received!</div>
+                <p className="ct-success-sub">
+                  Thanks for reaching out. One of our team members will be in touch within 30 minutes.
+                </p>
+                <div className="ct-success-badge">
+                  <span>🚀</span> We'll send a mail to <strong>{form.email}</strong>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="ct-form-title">Start a conversation</div>
+                <div className="ct-form-sub">All fields marked * are required. We never share your info.</div>
+
+                {/* Name + Email */}
+                <div className="ct-field-row">
+                  <div className={`ct-field${focused === "name" ? " focused" : ""}`}>
+                    <label className="ct-label">Your Name *</label>
+                    <input
+                      name="name"
+                      autoComplete="name"
+                      className="ct-input"
+                      placeholder="Ashish Mittal"
+                      value={form.name}
+                      onChange={e => handleChange("name", e.target.value)}
+                      onFocus={() => setFocused("name")}
+                      onBlur={() => setFocused("")}
+                    />
+                  </div>
+                  <div className={`ct-field${focused === "email" ? " focused" : ""}`}>
+                    <label className="ct-label">Work Email *</label>
+                    <input
+                      className="ct-input"
+                      type="email"
+                      autoComplete="email"
+                      placeholder="you@company.com"
+                      value={form.email}
+                      onChange={e => handleChange("email", e.target.value)}
+                      onFocus={() => setFocused("email")}
+                      onBlur={() => setFocused("")}
+                    />
                   </div>
                 </div>
-              ) : (
-                <>
-                  <div className="ct-form-title">Start a conversation</div>
-                  <div className="ct-form-sub">All fields marked * are required. We never share your info.</div>
 
-                  {/* Name + Email */}
-                  <div className="ct-field-row">
-                    <div className={`ct-field${focused === "name" ? " focused" : ""}`}>
-                      <label className="ct-label">Your Name *</label>
-                      <input
-                        className="ct-input"
-                        placeholder="Ashish Mittal"
-                        value={form.name}
-                        onChange={e => handleChange("name", e.target.value)}
-                        onFocus={() => setFocused("name")}
-                        onBlur={() => setFocused("")}
-                      />
-                    </div>
-                    <div className={`ct-field${focused === "email" ? " focused" : ""}`}>
-                      <label className="ct-label">Work Email *</label>
-                      <input
-                        className="ct-input"
-                        type="email"
-                        placeholder="you@company.com"
-                        value={form.email}
-                        onChange={e => handleChange("email", e.target.value)}
-                        onFocus={() => setFocused("email")}
-                        onBlur={() => setFocused("")}
-                      />
-                    </div>
+                {/* Company */}
+                <div className="ct-field-col">
+                  <div className={`ct-field${focused === "company" ? " focused" : ""}`}>
+                    <label className="ct-label">Company / Project</label>
+                    <input
+                      className="ct-input"
+                      placeholder="Canopux Inc."
+                      value={form.company}
+                      onChange={e => handleChange("company", e.target.value)}
+                      onFocus={() => setFocused("company")}
+                      onBlur={() => setFocused("")}
+                    />
                   </div>
+                </div>
 
-                  {/* Company */}
-                  <div className="ct-field-col">
-                    <div className={`ct-field${focused === "company" ? " focused" : ""}`}>
-                      <label className="ct-label">Company / Project</label>
-                      <input
-                        className="ct-input"
-                        placeholder="Canopux Inc."
-                        value={form.company}
-                        onChange={e => handleChange("company", e.target.value)}
-                        onFocus={() => setFocused("company")}
-                        onBlur={() => setFocused("")}
-                      />
-                    </div>
+                {/* Service chips */}
+                <div className="ct-field-col">
+                  <label className="ct-label" style={{ display: "block", marginBottom: 10 }}>What do you need?</label>
+                  <div className="ct-chips">
+                    {SERVICES.map(s => (
+                      <div
+                        key={s}
+                        className={`ct-chip${form.service === s ? " selected" : ""}`}
+                        onClick={() => handleChange("service", form.service === s ? "" : s)}
+                      >{s}</div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Service chips */}
-                  <div className="ct-field-col">
-                    <label className="ct-label" style={{ display: "block", marginBottom: 10 }}>What do you need?</label>
-                    <div className="ct-chips">
-                      {SERVICES.map(s => (
-                        <div
-                          key={s}
-                          className={`ct-chip${form.service === s ? " selected" : ""}`}
-                          onClick={() => handleChange("service", form.service === s ? "" : s)}
-                        >{s}</div>
-                      ))}
-                    </div>
+                {/* Budget chips */}
+                <div className="ct-field-col" style={{ marginTop: 16 }}>
+                  <label className="ct-label" style={{ display: "block", marginBottom: 10 }}>Estimated Budget</label>
+                  <div className="ct-chips">
+                    {BUDGETS.map(b => (
+                      <div
+                        key={b}
+                        className={`ct-chip${form.budget === b ? " selected" : ""}`}
+                        onClick={() => handleChange("budget", form.budget === b ? "" : b)}
+                      >{b}</div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Budget chips */}
-                  <div className="ct-field-col" style={{ marginTop: 16 }}>
-                    <label className="ct-label" style={{ display: "block", marginBottom: 10 }}>Estimated Budget</label>
-                    <div className="ct-chips">
-                      {BUDGETS.map(b => (
-                        <div
-                          key={b}
-                          className={`ct-chip${form.budget === b ? " selected" : ""}`}
-                          onClick={() => handleChange("budget", form.budget === b ? "" : b)}
-                        >{b}</div>
-                      ))}
-                    </div>
+                {/* Message */}
+                <div className="ct-field-col" style={{ marginTop: 16 }}>
+                  <div className={`ct-field${focused === "message" ? " focused" : ""}`} style={{ position: "relative" }}>
+                    <label className="ct-label">Your Message *</label>
+                    <textarea
+                      className="ct-textarea"
+                      placeholder="Tell us about your project — what you're building, the challenges you're facing, and what success looks like..."
+                      value={form.message}
+                      onChange={e => handleChange("message", e.target.value)}
+                      onFocus={() => setFocused("message")}
+                      onBlur={() => setFocused("")}
+                      maxLength={500}
+                    />
+                    <span className={`ct-char${charCount > 420 ? " warn" : ""}`}>{charCount}/500</span>
                   </div>
+                </div>
 
-                  {/* Message */}
-                  <div className="ct-field-col" style={{ marginTop: 16 }}>
-                    <div className={`ct-field${focused === "message" ? " focused" : ""}`} style={{ position: "relative" }}>
-                      <label className="ct-label">Your Message *</label>
-                      <textarea
-                        className="ct-textarea"
-                        placeholder="Tell us about your project — what you're building, the challenges you're facing, and what success looks like..."
-                        value={form.message}
-                        onChange={e => handleChange("message", e.target.value)}
-                        onFocus={() => setFocused("message")}
-                        onBlur={() => setFocused("")}
-                        maxLength={500}
-                      />
-                      <span className={`ct-char${charCount > 420 ? " warn" : ""}`}>{charCount}/500</span>
-                    </div>
-                  </div>
-
-                  {/* Submit row */}
-                  <div className="ct-submit-row">
-                    <p className="ct-privacy">
-                      Your data is never sold or shared.
-                    </p>
-                    <button
-                      className="ct-btn-submit"
-                      onClick={handleSubmit}
-                      disabled={sending || !form.name || !form.email || !form.message}
-                    >
-                      <span>
-                        {sending ? (
-                          <><div className="ct-spinner" /> Sending…</>
-                        ) : (
-                          <>Send Message <span className="ct-btn-arr">→</span></>
-                        )}
-                      </span>
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
+                {/* Submit row */}
+                <div className="ct-submit-row">
+                  <p className="ct-privacy">
+                    Your data is never sold or shared.
+                  </p>
+                  <button
+                    type="submit"
+                    className="ct-btn-submit"
+                    onClick={handleSubmit}
+                    disabled={sending || !form.name || !form.email || !form.message}
+                  >
+                    <span>
+                      {sending ? (
+                        <><div className="ct-spinner" /> Sending…</>
+                      ) : (
+                        <>Send Message <span className="ct-btn-arr">→</span></>
+                      )}
+                    </span>
+                  </button>
+                </div>
+              </>
+            )}
+            </form>
 
             {/* ── SIDEBAR ── */}
             <div className={`ct-sidebar${visible ? " in" : ""}`}>
@@ -323,7 +340,7 @@ export default function Contact() {
                   <div className="ct-method-icon">{m.icon}</div>
                   <div>
                     <div className="ct-method-label">{m.label}</div>
-                    <div className="ct-method-value">{m.value}</div>
+                    <strong className="ct-method-value">{m.value}</strong>
                     <div className="ct-method-sub">{m.sub}</div>
                   </div>
                 </a>

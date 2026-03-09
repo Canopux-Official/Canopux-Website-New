@@ -18,9 +18,9 @@ function HomePage() {
         
           <MarqueeSection/>
 
-          <CaseStudy/>
-
           <Services/>
+
+          <CaseStudy/>
 
           <About/>
 
