@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
@@ -10,23 +11,27 @@ import CaseStudy from "../components/CaseStudy";
 function HomePage() {
   return (
     <>
+      <SEO
+        title="Canopux — IT & Web Services"
+        description="Canopux is a software development company specializing in AI systems, web development, cloud infrastructure, DevOps, mobile apps and digital product engineering."
+      />
       <div className="home-root">
         <div className="page-wrap">
           <Navbar />
 
           <HeroSection />
-        
-          <MarqueeSection/>
 
-          <Services/>
+          <MarqueeSection />
 
-          <CaseStudy/>
+          <Services />
 
-          <About/>
+          <CaseStudy />
 
-          <Contact/>
+          <About />
 
-          <Footer/>
+          <Contact />
+
+          <Footer />
         </div>
       </div>
     </>
