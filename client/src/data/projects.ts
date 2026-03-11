@@ -49,35 +49,53 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    slug: "neuralops",
-    name: "NeuralOps",
-    tagline: "AI-powered infrastructure monitoring with predictive failure detection",
-    category: "AI & ML",
-    icon: "⬡",
-    accentColor: "#0ECFB0",
-    gradientFrom: "#0ECFB0",
-    gradientTo: "#0891B2",
+    slug: "jj-institute-of-science",
+    name: "JJ Institute of Science",
+    tagline: "In the pursuit of excellence",
+    category: "Education & Management",
+    icon: "🎓",
+    accentColor: "#3B82F6",
+    gradientFrom: "#3B82F6",
+    gradientTo: "#2563EB",
 
-    techStack: ["Python", "TensorFlow", "Kubernetes", "Grafana"],
-    impact: "40% reduction in downtime",
+    techStack: [
+      "React", 
+      "Vite", 
+      "TypeScript", 
+      "Material UI", 
+      "Framer Motion", 
+      "Node.js", 
+      "Express.js", 
+      "MongoDB", 
+      "OAuth", 
+      "Cloudinary", 
+      "Google Drive Integration"
+    ],
+
+    impact: "A comprehensive and dynamic educational management system enhancing student and admin experiences",
 
     purpose:
-      "Enterprise infrastructure teams were reacting to failures after they happened — losing hours to diagnostics and unplanned outages. NeuralOps was built to shift that posture from reactive to predictive, using ML models trained on historical metrics to surface failure signals before they cascade.",
+      "JJ Institute of Science project is designed to streamline educational administration while providing students with easy access to learning materials and personal academic records. The system enables super admins to control features, admins to manage students and sessions, and students to track their performance in a secure, progressive web application.",
 
     techDetails: [
-      { name: "Python", role: "Core ML pipeline and data preprocessing" },
-      { name: "TensorFlow", role: "LSTM models for time-series anomaly detection" },
-      { name: "Kubernetes", role: "Orchestrates distributed monitoring agents across clusters" },
-      { name: "Grafana", role: "Real-time alerting dashboards consumed by ops teams" },
+      { name: "React + Vite + TypeScript", role: "For building a fast, dynamic, and type-safe frontend" },
+      { name: "Material UI", role: "For consistent and responsive UI components" },
+      { name: "Framer Motion", role: "To implement smooth animations and transitions" },
+      { name: "Node.js + Express.js", role: "Backend server for handling requests, authentication, and business logic" },
+      { name: "MongoDB", role: "Database to store student, session, attendance, and notice data" },
+      { name: "OAuth", role: "For secure authentication and login systems" },
+      { name: "Cloudinary", role: "For storing and managing images" },
+      { name: "Google Drive Integration", role: "For uploading and managing class materials" },
     ],
 
     uniqueness:
-      "Unlike threshold-based monitors, NeuralOps learns normal behaviour per service and flags deviations contextually. It correlates signals across layers — CPU, memory, network, and application logs — to pinpoint root cause rather than symptoms. The system self-improves with every resolved incident.",
+      "JJ Institute of Science platform is a full-fledged education management system that combines dynamic content rendering, session management, secure OTP-based signups, and progressive web app capabilities. It empowers super admins to control features, ensures smooth student and admin interactions, and integrates third-party services like Drive and Cloudinary for enhanced functionality.",
 
     impactDetails: [
-      { metric: "40%", label: "reduction in unplanned downtime" },
-      { metric: "3.1×", label: "faster mean time to resolution" },
-      { metric: "89%", label: "prediction accuracy on failure events" },
+      { metric: "Dynamic Content", label: "Landing page updates automatically based on super admin inputs" },
+      { metric: "Full Access Control", label: "Super admin can grant admin-specific access to features" },
+      { metric: "Secure Signup", label: "OTP-based registration ensures high security for students" },
+      { metric: "PWA Experience", label: "Smooth and responsive usage across devices as a Progressive Web App" },
     ],
 
     images: [
@@ -93,79 +111,107 @@ export const projects: Project[] = [
 
   {
     id: 2,
-    slug: "flowcart",
-    name: "FlowCart",
-    tagline: "High-conversion e-commerce platform built for scale and speed",
-    category: "Web Development",
+    slug: "ai-ats-resume-screening",
+    name: "AI ATS",
+    tagline: "AI-powered resume screening and job matching platform for smarter hiring",
+    category: "AI & ML",
     icon: "◈",
-    accentColor: "#6366F1",
-    gradientFrom: "#6366F1",
-    gradientTo: "#8B5CF6",
+    accentColor: "#10B981",
+    gradientFrom: "#10B981",
+    gradientTo: "#06B6D4",
 
-    techStack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
-    impact: "3.2× increase in conversions",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "NestJS",
+      "PostgreSQL",
+      "NLP"
+    ],
+
+    impact: "Automated resume scoring and intelligent job recommendations",
 
     purpose:
-      "A mid-market retail brand was losing 60% of mobile visitors at checkout due to sluggish load times and a fragmented purchase flow. FlowCart was engineered from scratch as a headless commerce platform with sub-second page loads and a checkout experience reduced to three taps.",
+      "Recruiters often spend hours manually reviewing resumes while candidates struggle to understand why their applications fail ATS systems. This platform was built to bridge that gap by using AI to analyze resumes, generate ATS scores, and recommend relevant jobs, helping recruiters identify strong candidates faster while guiding job seekers toward better opportunities.",
 
     techDetails: [
-      { name: "Next.js", role: "SSR and ISR for instant storefront page loads" },
-      { name: "Node.js", role: "Order management and payment orchestration API" },
-      { name: "PostgreSQL", role: "Transactional data with full ACID compliance" },
-      { name: "Redis", role: "Session caching and cart state across devices" },
+      {
+        name: "React + Tailwind CSS",
+        role: "Responsive frontend interface for job seekers and recruiters with clean UI and smooth UX"
+      },
+      {
+        name: "Framer Motion",
+        role: "Used for smooth animations and transitions across the platform to enhance user experience"
+      },
+      {
+        name: "NestJS",
+        role: "Backend framework handling authentication, APIs, job posting, resume uploads, and ATS scoring workflows"
+      },
+      {
+        name: "Prisma",
+        role: "Type-safe ORM used to manage database models and queries"
+      },
+      {
+        name: "PostgreSQL",
+        role: "Primary relational database storing users, resumes, jobs, and ATS scoring data"
+      },
+      {
+        name: "AI Resume Scoring Model",
+        role: "Analyzes uploaded resumes and job descriptions to calculate ATS compatibility scores and recommend relevant job roles"
+      }
     ],
 
     uniqueness:
-      "FlowCart's checkout is a single persistent drawer — never a redirect, never a page reload. Cart state syncs in real time across devices. The recommendation engine runs at the edge, personalising product order per visitor without a backend round-trip. PageSpeed Insights score: 98.",
+      "The platform combines AI-based resume evaluation with a full hiring workflow. Recruiters can post jobs and automatically receive ranked candidate resumes based on ATS scores, while job seekers receive feedback on resume performance and job recommendations tailored to their skills and preferred fields.",
 
     impactDetails: [
-      { metric: "3.2×", label: "increase in completed purchases" },
-      { metric: "0.8s", label: "average time to interactive on mobile" },
-      { metric: "54%", label: "drop in cart abandonment rate" },
+      { metric: "AI", label: "resume screening and ATS score generation" },
+      { metric: "Role-based", label: "authentication for recruiters and job seekers" },
+      { metric: "Smart", label: "job recommendations based on resume analysis" },
+      { metric: "Scalable solution", label: "can handle large volumes of resumes and jobs efficiently" },
     ],
 
     images: [
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=80",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&q=80",
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&q=80",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80",
+      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1600&q=80"
     ],
 
-    architectureComponent: undefined,
+    architectureComponent: undefined
   },
 
   {
     id: 3,
-    slug: "pulsehr",
-    name: "PulseHR",
-    tagline: "Intelligent HR automation suite with real-time workforce analytics",
-    category: "App Development",
-    icon: "◎",
-    accentColor: "#F59E0B",
-    gradientFrom: "#F59E0B",
-    gradientTo: "#EF4444",
+    slug: "indocrypt2025",
+    name: "IndoCrypt   2025",
+    tagline: "Premier annual conference on cryptography and information security in India",
+    category: "Cybersecurity & Events",
+    icon: "🔒",
+    accentColor: "#10B981",
+    gradientFrom: "#10B981",
+    gradientTo: "#059669",
 
-    techStack: ["React Native", "FastAPI", "MongoDB", "AWS"],
-    impact: "60% faster hiring cycle",
+    techStack: ["React", "Vite", "JavaScript", "Framer Motion"],
+    impact: "Largest gathering of cryptography experts in India",
 
     purpose:
-      "A 2,000-person organisation was managing hiring across spreadsheets, email threads, and three disconnected tools. PulseHR unified the full employee lifecycle — from job posting to offboarding — in a single cross-platform application with automated workflows and live analytics.",
+      "IndoCrypt 2025 is designed to bring together researchers, practitioners, and enthusiasts in cryptography and information security. The conference facilitates knowledge sharing, networking, and collaboration, while highlighting cutting-edge research and emerging security technologies in India and worldwide.",
 
     techDetails: [
-      { name: "React Native", role: "Single codebase for iOS, Android, and web HR portal" },
-      { name: "FastAPI", role: "High-throughput async API for workflow automation" },
-      { name: "MongoDB", role: "Flexible document model for varied HR record structures" },
-      { name: "AWS", role: "Lambda-based automations and S3 document management" },
+      { name: "React", role: "For building a responsive and interactive front-end" },
+      { name: "Vite", role: "Lightning-fast build tool for development and production" },
+      { name: "JavaScript", role: "Core programming language enabling dynamic content" },
+      { name: "Framer Motion", role: "Adds smooth animations and transitions to UI elements" },
     ],
 
     uniqueness:
-      "PulseHR's workflow engine is no-code — HR teams build custom approval chains, onboarding sequences, and review cycles via a drag-and-drop canvas. The analytics layer detects attrition risk 90 days in advance using engagement signal modelling, giving managers time to act.",
+      "IndoCrypt 2025 is the flagship cryptography event in India, combining academic rigor with real-world application. It showcases the latest research papers, workshops, and keynote talks from international experts. With high visibility SEO, its website ensures global accessibility and maximized outreach for participants and sponsors alike.",
 
     impactDetails: [
-      { metric: "60%", label: "faster end-to-end hiring cycle" },
-      { metric: "90 days", label: "advance attrition risk detection" },
-      { metric: "4.8/5", label: "employee satisfaction with onboarding" },
+      { metric: "Top SEO", label: "conference website ranks at the top of Google searches" },
+      { metric: "Hundreds+", label: "research papers and projects showcased" },
+      { metric: "500+", label: "participants including students, professionals, and researchers" },
     ],
 
     images: [
@@ -223,6 +269,8 @@ export const projects: Project[] = [
     architectureComponent: undefined,
   },
 ];
+
+
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

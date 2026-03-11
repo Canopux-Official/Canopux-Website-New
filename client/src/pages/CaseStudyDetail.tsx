@@ -740,8 +740,8 @@ export default function CaseStudyDetail() {
         .csd-impact-metric {
           display: block;
           font-family: 'Sora', sans-serif;
-          font-size: clamp(44px, 6vw, 72px);
-          font-weight: 800; letter-spacing: -0.04em;
+          font-size: clamp(20px, 3vw, 32px);
+          font-weight: 300; letter-spacing: -0.04em;
           background: linear-gradient(130deg, #fff 30%, var(--accent) 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text; line-height: 1; margin-bottom: 6px;
