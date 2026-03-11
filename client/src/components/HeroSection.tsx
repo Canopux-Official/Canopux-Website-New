@@ -112,19 +112,19 @@ export default function HeroSection() {
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-const scrollToContact = () => {
-  const section = document.getElementById("contact");
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
+  const scrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-const scrollToCaseStudies = () => {
-  const section = document.getElementById("case-studies");
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
+  const scrollToCaseStudies = () => {
+    const section = document.getElementById("case-studies");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const services = [
     { icon: "🌐", label: "Web Development", color: "#2dd4bf" },
     { icon: "🤖", label: "AI & ML", color: "#3b82f6" },
@@ -138,10 +138,21 @@ const scrollToCaseStudies = () => {
   return (
     <>
 
-      <section id="home" className="hero" ref={heroRef} >
-        {/* Canvas particles */}
-        <canvas className="hero-canvas" ref={canvasRef} />
+      <section
+        id="home"
+        className="hero"
+        ref={heroRef}
+        aria-label="Hero section introducing Canopux web development AI and cloud services"
+      >        {/* Canvas particles */}
 
+        <p className="sr-only">
+          Web development services, AI solutions, mobile app development and cloud engineering by Canopux.
+        </p>
+        <canvas
+          className="hero-canvas"
+          ref={canvasRef}
+          aria-hidden="true"
+        />
         {/* Blobs */}
         <div className="blob blob-1" style={{ transform: `translate(${px * 0.4}px, ${py * 0.3}px)` }} />
         <div className="blob blob-2" style={{ transform: `translate(${-px * 0.3}px, ${-py * 0.2}px)` }} />
@@ -213,11 +224,11 @@ const scrollToCaseStudies = () => {
           {/* Headline */}
           <div className="headline-wrap">
             <span className="h-pre">Powering startups and enterprises</span>
-            <span className="h-main">
+            <h1 className="h-main">
               <span className="word-outline">Build</span>
               {" "}
               <span className="word-grad">Smarter.</span>
-            </span>
+            </h1>
             <span className="h-sub-line">
               Ship Faster.&nbsp;
               <span className="h-rotating">
@@ -230,22 +241,34 @@ const scrollToCaseStudies = () => {
 
           {/* Description */}
           <p className="hero-desc">
-            We engineer <strong>AI systems, web platforms, and intelligent automation</strong> that
-            give ambitious businesses a measurable edge - from first line of code to launch and beyond.
+            We engineer <strong>AI systems, modern web platforms, and intelligent automation solutions </strong>
+            that give ambitious businesses a measurable edge — from first line of code to launch and beyond.
           </p>
 
           {/* CTAs */}
           <div className="cta-wrap">
-            <button className="btn-primary" onClick={scrollToContact}>
-              <span>
+            <a
+              href="#contact"
+              className="btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToContact();
+              }}
+            >              <span>
                 Let's Collaborate
                 <span className="btn-arrow">→</span>
               </span>
-            </button>
+            </a>
 
-            <button className="btn-secondary" onClick={scrollToCaseStudies}>
-              Explore Our Work
-            </button>
+            <a
+              href="#case-studies"
+              className="btn-secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToCaseStudies();
+              }}
+            >              Explore Our Work
+            </a>
           </div>
 
           {/* Service tabs */}

@@ -1,15 +1,16 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProjectBySlug, type Project } from "../data/projects";
+import SEO from "../components/SEO";
 
 // ─── Slide config ─────────────────────────────────────────────────────────────
 
 const SLIDES = [
-  { id: "cover",      label: "Overview"  },
-  { id: "purpose",    label: "Purpose"   },
-  { id: "tech",       label: "Stack"     },
-  { id: "uniqueness", label: "Approach"  },
-  { id: "impact",     label: "Impact"    },
+  { id: "cover", label: "Overview" },
+  { id: "purpose", label: "Purpose" },
+  { id: "tech", label: "Stack" },
+  { id: "uniqueness", label: "Approach" },
+  { id: "impact", label: "Impact" },
 ] as const;
 
 type SlideId = typeof SLIDES[number]["id"];
@@ -52,7 +53,7 @@ function CoverSlide({ project, animKey }: { project: Project; animKey: number })
       <div className="csd-cover-hint">
         <span>Click anywhere on the right to explore</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M6 2l4 5-4 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6 2l4 5-4 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </div>
@@ -143,15 +144,15 @@ function ArchitecturePlaceholder({ project }: { project: Project }) {
         <div className="csd-arch-ring csd-arch-ring-3" style={{ borderColor: project.accentColor + "10" }} />
         <div className="csd-arch-icon-wrap" style={{ background: project.accentColor + "15", borderColor: project.accentColor + "40" }}>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style={{ color: project.accentColor }}>
-            <rect x="2" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5"/>
-            <rect x="13" y="2" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5"/>
-            <rect x="13" y="24" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5"/>
-            <rect x="24" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="11" y1="17.5" x2="13" y2="17.5" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="17.5" y1="11" x2="17.5" y2="13" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="17.5" y1="24" x2="17.5" y2="24" stroke="currentColor" strokeWidth="1.5"/>
-            <line x1="23" y1="17.5" x2="24" y2="17.5" stroke="currentColor" strokeWidth="1.5"/>
-            <circle cx="17.5" cy="17.5" r="3" stroke="currentColor" strokeWidth="1.5"/>
+            <rect x="2" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <rect x="13" y="2" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <rect x="13" y="24" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <rect x="24" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="11" y1="17.5" x2="13" y2="17.5" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="17.5" y1="11" x2="17.5" y2="13" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="17.5" y1="24" x2="17.5" y2="24" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="23" y1="17.5" x2="24" y2="17.5" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="17.5" cy="17.5" r="3" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         </div>
       </div>
@@ -170,29 +171,29 @@ function ArchitecturePlaceholder({ project }: { project: Project }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function CaseStudyDetail() {
-  const { slug }   = useParams<{ slug: string }>();
-  const navigate   = useNavigate();
-  const project    = getProjectBySlug(slug ?? "");
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const project = getProjectBySlug(slug ?? "");
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [prevSlide,    setPrevSlide]    = useState<number | null>(null);
-  const [animating,    setAnimating]    = useState(false);
-  const [direction,    setDirection]    = useState<"next" | "prev">("next");
-  const [archMode,     setArchMode]     = useState(false);
-  const [imgLoaded,    setImgLoaded]    = useState<boolean[]>([false, false, false, false, false]);
-  const [animKey,      setAnimKey]      = useState(0);
+  const [prevSlide, setPrevSlide] = useState<number | null>(null);
+  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [archMode, setArchMode] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean[]>([false, false, false, false, false]);
+  const [animKey, setAnimKey] = useState(0);
 
   // Mouse parallax
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
-  const mouseRef          = useRef({ x: 0.5, y: 0.5 });
-  const rafRef            = useRef<number | null>(null);
+  const mouseRef = useRef({ x: 0.5, y: 0.5 });
+  const rafRef = useRef<number | null>(null);
 
   // Cursor zone (left=prev, right=next)
-  const [cursorZone, setCursorZone]     = useState<"left" | "right" | "center">("center");
+  const [cursorZone, setCursorZone] = useState<"left" | "right" | "center">("center");
 
   // Slide counter visibility
   const [counterVisible, setCounterVisible] = useState(false);
-  const counterTimeout                       = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const counterTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const animTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -201,22 +202,11 @@ export default function CaseStudyDetail() {
     if (!project) return;
     project.images.forEach((src, i) => {
       const img = new Image();
-      img.src   = src;
+      img.src = src;
       img.onload = () =>
         setImgLoaded((prev) => { const n = [...prev]; n[i] = true; return n; });
     });
   }, [project]);
-
-  // ── Keyboard nav
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") goTo(currentSlide + 1);
-      if (e.key === "ArrowLeft"  || e.key === "ArrowUp")   goTo(currentSlide - 1);
-      if (e.key === "Escape") navigate(-1);
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [currentSlide, animating]);
 
   // ── Smooth mouse tracking via rAF
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -231,9 +221,9 @@ export default function CaseStudyDetail() {
     });
 
     // Cursor zone
-    if (nx < 0.25)      setCursorZone("left");
+    if (nx < 0.25) setCursorZone("left");
     else if (nx > 0.75) setCursorZone("right");
-    else                setCursorZone("center");
+    else setCursorZone("center");
   }, []);
 
   // ── Navigate
@@ -259,6 +249,17 @@ export default function CaseStudyDetail() {
     }, 600);
   }, [animating, currentSlide]);
 
+  // ── Keyboard nav
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") goTo(currentSlide + 1);
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") goTo(currentSlide - 1);
+      if (e.key === "Escape") navigate(-1);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [currentSlide, animating, goTo, navigate]);
+
   // ── Click zone handler
   const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     // Ignore clicks on interactive elements
@@ -266,7 +267,7 @@ export default function CaseStudyDetail() {
     if (target.closest("button") || target.closest(".csd-topbar") || target.closest(".csd-nav-dots")) return;
 
     const x = e.clientX / window.innerWidth;
-    if (x > 0.55)      goTo(currentSlide + 1);
+    if (x > 0.55) goTo(currentSlide + 1);
     else if (x < 0.45) goTo(currentSlide - 1);
   }, [currentSlide, goTo]);
 
@@ -279,9 +280,9 @@ export default function CaseStudyDetail() {
     );
   }
 
-  const accentRgb  = hexToRgb(project.accentColor);
-  const bgImage    = project.images[currentSlide] ?? project.images[0];
-  const prevBgImg  = prevSlide !== null ? (project.images[prevSlide] ?? project.images[0]) : null;
+  const accentRgb = hexToRgb(project.accentColor);
+  const bgImage = project.images[currentSlide] ?? project.images[0];
+  const prevBgImg = prevSlide !== null ? (project.images[prevSlide] ?? project.images[0]) : null;
 
   // Parallax offsets
   const px = (mouse.x - 0.5) * 28;
@@ -291,16 +292,21 @@ export default function CaseStudyDetail() {
 
   const renderSlide = (index: number, key: number) => {
     const id = SLIDES[index].id as SlideId;
-    if (id === "cover")      return <CoverSlide      project={project} animKey={key} />;
-    if (id === "purpose")    return <PurposeSlide    project={project} animKey={key} />;
-    if (id === "tech")       return <TechSlide       project={project} animKey={key} />;
+    if (id === "cover") return <CoverSlide project={project} animKey={key} />;
+    if (id === "purpose") return <PurposeSlide project={project} animKey={key} />;
+    if (id === "tech") return <TechSlide project={project} animKey={key} />;
     if (id === "uniqueness") return <UniquenessSlide project={project} animKey={key} />;
-    if (id === "impact")     return <ImpactSlide     project={project} animKey={key} />;
+    if (id === "impact") return <ImpactSlide project={project} animKey={key} />;
     return null;
   };
 
   return (
     <>
+      <SEO
+        title={`${project.name} | Case Study by Canopux`}
+        description={project.tagline}
+        type="article"
+      />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 
@@ -855,7 +861,7 @@ export default function CaseStudyDetail() {
         >
           <div className="csd-zone-arrow">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M10 4L6 8l4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M10 4L6 8l4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
@@ -866,7 +872,7 @@ export default function CaseStudyDetail() {
         >
           <div className="csd-zone-arrow">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
@@ -875,7 +881,7 @@ export default function CaseStudyDetail() {
         <div className="csd-topbar">
           <button className="csd-back-btn" onClick={() => navigate(-1)}>
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-              <path d="M9 2L4 6.5 9 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 2L4 6.5 9 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             Back
           </button>
@@ -884,19 +890,19 @@ export default function CaseStudyDetail() {
             {archMode ? (
               <>
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M9 2L4 6.5 9 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 2L4 6.5 9 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Back to Story
               </>
             ) : (
               <>
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <rect x="1" y="4.5" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3"/>
-                  <rect x="4.5" y="1" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3"/>
-                  <rect x="8" y="4.5" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3"/>
-                  <line x1="6.5" y1="5" x2="6.5" y2="4.5" stroke="currentColor" strokeWidth="1.3"/>
-                  <line x1="5" y1="6.5" x2="4.5" y2="6.5" stroke="currentColor" strokeWidth="1.3"/>
-                  <line x1="8" y1="6.5" x2="8" y2="6.5" stroke="currentColor" strokeWidth="1.3"/>
+                  <rect x="1" y="4.5" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3" />
+                  <rect x="4.5" y="1" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3" />
+                  <rect x="8" y="4.5" width="4" height="4" rx="1.2" stroke="currentColor" strokeWidth="1.3" />
+                  <line x1="6.5" y1="5" x2="6.5" y2="4.5" stroke="currentColor" strokeWidth="1.3" />
+                  <line x1="5" y1="6.5" x2="4.5" y2="6.5" stroke="currentColor" strokeWidth="1.3" />
+                  <line x1="8" y1="6.5" x2="8" y2="6.5" stroke="currentColor" strokeWidth="1.3" />
                 </svg>
                 Architecture View
               </>
