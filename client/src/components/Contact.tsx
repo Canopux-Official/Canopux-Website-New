@@ -50,7 +50,7 @@ const CONTACT_METHODS = [
       </svg>
     ),
     label: "Headquarters",
-    value: "Bhubaneswar, Odisha 751001",
+    value: "Bhubaneswar, Odisha 751003",
     sub: " · India",
     href: null,
   },
