@@ -80,17 +80,33 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span className="cs-impact-dot" style={{ background: project.accentColor }} />
             <span className="cs-impact-text">{project.impact}</span>
           </div>
-          <button
-            className="cs-cta"
-            style={{
-              background: hovered ? `linear-gradient(135deg, ${project.gradientFrom}, ${project.gradientTo})` : "transparent",
-              borderColor: project.accentColor,
-              color: hovered ? "#fff" : project.accentColor,
-            }}
-            onClick={(e) => { e.stopPropagation(); navigate(`/case-studies/${project.slug}`); }}
-          >
-            View Case Study →
-          </button>
+          <div className="cs-cta-group">
+            {project.liveURL && (
+              <a
+                className="cs-cta cs-cta-live"
+                href={project.liveURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                  <path d="M1 10L10 1M10 1H4M10 1v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Live
+              </a>
+            )}
+            <button
+              className="cs-cta"
+              style={{
+                background: hovered ? `linear-gradient(135deg, ${project.gradientFrom}, ${project.gradientTo})` : "transparent",
+                borderColor: project.accentColor,
+                color: hovered ? "#fff" : project.accentColor,
+              }}
+              onClick={(e) => { e.stopPropagation(); navigate(`/case-studies/${project.slug}`); }}
+            >
+              Case Study →
+            </button>
+          </div>
         </div>
       </div>
     </div>

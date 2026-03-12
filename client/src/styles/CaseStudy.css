@@ -63,7 +63,10 @@
         .cs-impact { display: flex; align-items: center; gap: 8px; }
         .cs-impact-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
         .cs-impact-text { font-size: 13px; font-weight: 600; color: #334155; }
-        .cs-cta { font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 100px; border: 1.5px solid; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; }
+        .cs-cta { font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 100px; border: 1.5px solid; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .cs-cta-group { display: flex; align-items: center; gap: 8px; }
+        .cs-cta-live { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 8px 14px; border-radius: 100px; border: 1.5px solid #E2E8F0; color: #64748B; background: transparent; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .cs-cta-live:hover { border-color: #0ECFB0; color: #0ECFB0; background: #0ECFB008; }
         .cs-bottom { text-align: center; margin-top: 56px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s; }
         .cs-bottom.visible { opacity: 1; transform: translateY(0); }
         .cs-all-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #0F172A; background: #ffffff; border: 1.5px solid #E2E8F0; padding: 14px 32px; border-radius: 100px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }

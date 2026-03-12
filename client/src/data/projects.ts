@@ -28,7 +28,8 @@ export interface Project {
 
   // ── Card fields (existing)
   techStack: string[];    // plain names for card tags
-  impact: string;         // single-line for card
+  impact: string;   
+  liveURL: string;      // single-line for card
 
   // ── Detail view fields (new)
   purpose: string;        // Slide 2 — what it does and why it was built
@@ -73,6 +74,8 @@ export const projects: Project[] = [
     ],
 
     impact: "A comprehensive and dynamic educational management system enhancing student and admin experiences",
+
+    liveURL: "https://www.jjinstitute.in/",
 
     purpose:
       "JJ Institute of Science project is designed to streamline educational administration while providing students with easy access to learning materials and personal academic records. The system enables super admins to control features, admins to manage students and sessions, and students to track their performance in a secure, progressive web application.",
@@ -129,6 +132,8 @@ export const projects: Project[] = [
     ],
 
     impact: "Automated resume scoring and intelligent job recommendations",
+
+    liveURL: "https://ats-orpin.vercel.app/",
 
     purpose:
       "Recruiters often spend hours manually reviewing resumes while candidates struggle to understand why their applications fail ATS systems. This platform was built to bridge that gap by using AI to analyze resumes, generate ATS scores, and recommend relevant jobs, helping recruiters identify strong candidates faster while guiding job seekers toward better opportunities.",
@@ -195,6 +200,8 @@ export const projects: Project[] = [
     techStack: ["React", "Vite", "JavaScript", "Framer Motion"],
     impact: "Largest gathering of cryptography experts in India",
 
+    liveURL: "https://www.indocrypt2025.in/",
+
     purpose:
       "IndoCrypt 2025 is designed to bring together researchers, practitioners, and enthusiasts in cryptography and information security. The conference facilitates knowledge sharing, networking, and collaboration, while highlighting cutting-edge research and emerging security technologies in India and worldwide.",
 
@@ -238,6 +245,8 @@ export const projects: Project[] = [
 
     techStack: ["Go", "Terraform", "Vault", "GCP"],
     impact: "99.99% data integrity SLA",
+
+    liveURL: "",
 
     purpose:
       "A fintech handling sensitive customer financial records needed to migrate 12TB of data across cloud providers with zero tolerance for breach or loss. VaultSync was built as a secure-by-default pipeline — every byte encrypted in transit and at rest, every transfer auditable end to end.",
