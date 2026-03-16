@@ -1,302 +1,75 @@
-/* ── Section ── */
-        .cs-section {
-          position: relative;
-          padding: 120px 0 140px;
-          background: #F8FFFE;
-          overflow: hidden;
+.cs-section {
+          position: relative; padding: 120px 0 140px;
+          background: #F8FFFE; overflow: hidden;
           font-family: 'DM Sans', 'Sora', sans-serif;
         }
-
-        /* Subtle dot grid background */
         .cs-section::before {
-          content: '';
-          position: absolute;
-          inset: 0;
+          content: ''; position: absolute; inset: 0;
           background-image: radial-gradient(circle, #0ECFB020 1px, transparent 1px);
-          background-size: 36px 36px;
-          pointer-events: none;
+          background-size: 36px 36px; pointer-events: none;
         }
-
-        /* Teal glow top-left */
         .cs-section::after {
-          content: '';
-          position: absolute;
-          top: -120px;
-          left: -120px;
-          width: 500px;
-          height: 500px;
+          content: ''; position: absolute; top: -120px; left: -120px;
+          width: 500px; height: 500px;
           background: radial-gradient(circle, #0ECFB015 0%, transparent 70%);
           pointer-events: none;
         }
-
-        .cs-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 32px;
-          position: relative;
-          z-index: 1;
-        }
-
-        /* ── Header ── */
+        .cs-container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
         .cs-header {
-          text-align: center;
-          margin-bottom: 72px;
-          opacity: 0;
-          transform: translateY(28px);
+          text-align: center; margin-bottom: 72px;
+          opacity: 0; transform: translateY(28px);
           transition: opacity 0.7s ease, transform 0.7s ease;
         }
-        .cs-header.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
+        .cs-header.visible { opacity: 1; transform: translateY(0); }
         .cs-eyebrow {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #0ECFB0;
-          background: #0ECFB012;
-          border: 1px solid #0ECFB030;
-          border-radius: 100px;
-          padding: 6px 16px;
-          margin-bottom: 20px;
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+          color: #0ECFB0; background: #0ECFB012; border: 1px solid #0ECFB030;
+          border-radius: 100px; padding: 6px 16px; margin-bottom: 20px;
         }
         .cs-eyebrow::before {
-          content: '';
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #0ECFB0;
-          animation: pulse 2s infinite;
+          content: ''; width: 6px; height: 6px; border-radius: 50%;
+          background: #0ECFB0; animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.5; transform: scale(1.4); }
         }
-
-        .cs-title {
-          font-size: clamp(36px, 5vw, 54px);
-          font-weight: 700;
-          color: #0F172A;
-          line-height: 1.15;
-          margin: 0 0 16px;
-          letter-spacing: -0.02em;
-        }
-        .cs-title-accent {
-          background: linear-gradient(135deg, #0ECFB0, #0891B2);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .cs-subtitle {
-          font-size: 17px;
-          color: #64748B;
-          max-width: 480px;
-          margin: 0 auto;
-          line-height: 1.65;
-        }
-
-        /* ── Grid ── */
-        .cs-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-        }
-        @media (max-width: 768px) {
-          .cs-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ── Card ── */
-        .cs-card {
-          opacity: 0;
-          transform: translateY(40px);
-          animation: cardIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        }
-        .cs-card.visible { opacity: 1; transform: translateY(0); }
-
-        @keyframes cardIn {
-          to { opacity: 1; transform: translateY(0); }
-        }
-
+        .cs-title { font-size: clamp(36px, 5vw, 54px); font-weight: 700; color: #0F172A; line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+        .cs-title-accent { background: linear-gradient(135deg, #0ECFB0, #0891B2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .cs-subtitle { font-size: 17px; color: #64748B; max-width: 480px; margin: 0 auto; line-height: 1.65; }
+        .cs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        @media (max-width: 768px) { .cs-grid { grid-template-columns: 1fr; } }
+        .cs-card { opacity: 0; transform: translateY(40px); animation: cardIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
         .cs-card-inner {
-          background: #ffffff;
-          border: 1px solid #E2F4F2;
-          border-radius: 20px;
-          padding: 32px;
-          cursor: pointer;
-          position: relative;
-          overflow: hidden;
+          background: #ffffff; border: 1px solid #E2F4F2; border-radius: 20px; padding: 32px;
+          position: relative; overflow: hidden;
           box-shadow: 0 2px 20px rgba(14, 207, 176, 0.06), 0 1px 3px rgba(0,0,0,0.04);
           will-change: transform;
         }
-
-        .cs-card-glow {
-          position: absolute;
-          inset: -1px;
-          border-radius: 20px;
-          pointer-events: none;
-          transition: opacity 0.4s ease;
-        }
-
-        /* ── Card internals ── */
-        .cs-card-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 20px;
-        }
-
-        .cs-category {
-          font-size: 11px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: #94A3B8;
-          background: #F1F5F9;
-          padding: 4px 12px;
-          border-radius: 100px;
-        }
-
-        .cs-icon {
-          font-size: 26px;
-          line-height: 1;
-          opacity: 0.8;
-        }
-
-        .cs-name {
-          font-size: 28px;
-          font-weight: 700;
-          color: #0F172A;
-          margin: 0 0 10px;
-          letter-spacing: -0.02em;
-          position: relative;
-          display: inline-block;
-        }
-        .cs-name-line {
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          height: 2px;
-          width: 0;
-          border-radius: 2px;
-          transition: width 0.4s cubic-bezier(0.23,1,0.32,1);
-        }
-        .cs-card-inner:hover .cs-name-line {
-          width: 100%;
-        }
-
-        .cs-tagline {
-          font-size: 14px;
-          color: #64748B;
-          line-height: 1.6;
-          margin: 0 0 20px;
-        }
-
-        .cs-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-bottom: 24px;
-        }
-
-        .cs-tech {
-          font-size: 12px;
-          font-weight: 500;
-          color: #475569;
-          background: #F8FAFC;
-          border: 1px solid #E2E8F0;
-          padding: 4px 10px;
-          border-radius: 6px;
-          letter-spacing: 0.02em;
-        }
-
-        .cs-divider {
-          height: 1px;
-          margin-bottom: 20px;
-          border-radius: 1px;
-        }
-
-        .cs-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 12px;
-        }
-
-        .cs-impact {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        .cs-impact-dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          flex-shrink: 0;
-        }
-
-        .cs-impact-text {
-          font-size: 13px;
-          font-weight: 600;
-          color: #334155;
-        }
-
-        .cs-cta {
-          font-size: 13px;
-          font-weight: 600;
-          padding: 8px 18px;
-          border-radius: 100px;
-          border: 1.5px solid;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          white-space: nowrap;
-          letter-spacing: 0.01em;
-        }
-
-        /* ── Bottom CTA ── */
-        .cs-bottom {
-          text-align: center;
-          margin-top: 56px;
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
-        }
-        .cs-bottom.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .cs-all-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 15px;
-          font-weight: 600;
-          color: #0F172A;
-          background: #ffffff;
-          border: 1.5px solid #E2E8F0;
-          padding: 14px 32px;
-          border-radius: 100px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        }
-        .cs-all-btn:hover {
-          border-color: #0ECFB0;
-          color: #0ECFB0;
-          box-shadow: 0 4px 20px rgba(14, 207, 176, 0.15);
-          transform: translateY(-2px);
-        }
-        .cs-all-btn svg {
-          transition: transform 0.3s ease;
-        }
-        .cs-all-btn:hover svg {
-          transform: translateX(4px);
-        }
+        .cs-card-glow { position: absolute; inset: -1px; border-radius: 20px; pointer-events: none; transition: opacity 0.4s ease; }
+        .cs-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .cs-category { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #94A3B8; background: #F1F5F9; padding: 4px 12px; border-radius: 100px; }
+        .cs-icon { font-size: 26px; line-height: 1; opacity: 0.8; }
+        .cs-name { font-size: 28px; font-weight: 700; color: #0F172A; margin: 0 0 10px; letter-spacing: -0.02em; position: relative; display: inline-block; }
+        .cs-name-line { position: absolute; bottom: -2px; left: 0; height: 2px; width: 0; border-radius: 2px; transition: width 0.4s cubic-bezier(0.23,1,0.32,1); }
+        .cs-card-inner:hover .cs-name-line { width: 100%; }
+        .cs-tagline { font-size: 14px; color: #64748B; line-height: 1.6; margin: 0 0 20px; }
+        .cs-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+        .cs-tech { font-size: 12px; font-weight: 500; color: #475569; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 4px 10px; border-radius: 6px; }
+        .cs-divider { height: 1px; margin-bottom: 20px; border-radius: 1px; }
+        .cs-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .cs-impact { display: flex; align-items: center; gap: 8px; }
+        .cs-impact-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+        .cs-impact-text { font-size: 13px; font-weight: 600; color: #334155; }
+        .cs-cta { font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 100px; border: 1.5px solid; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .cs-cta-group { display: flex; align-items: center; gap: 8px; }
+        .cs-cta-live { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 8px 14px; border-radius: 100px; border: 1.5px solid #E2E8F0; color: #64748B; background: transparent; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; text-decoration: none; }
+        .cs-cta-live:hover { border-color: #0ECFB0; color: #0ECFB0; background: #0ECFB008; }
+        .cs-bottom { text-align: center; margin-top: 56px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s; }
+        .cs-bottom.visible { opacity: 1; transform: translateY(0); }
+        .cs-all-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #0F172A; background: #ffffff; border: 1.5px solid #E2E8F0; padding: 14px 32px; border-radius: 100px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .cs-all-btn:hover { border-color: #0ECFB0; color: #0ECFB0; box-shadow: 0 4px 20px rgba(14, 207, 176, 0.15); transform: translateY(-2px); }
+        .cs-all-btn svg { transition: transform 0.3s ease; }
+        .cs-all-btn:hover svg { transform: translateX(4px); }
