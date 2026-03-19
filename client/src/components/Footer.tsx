@@ -2,6 +2,7 @@ import '../styles/Footer.css'
 import type { RefObject } from "react"
 import logo from '../assets/logo-white.png'
 import { useState, useEffect, useRef } from "react"
+import { Link } from 'react-router-dom';
 
 function useInView(threshold = 0.05): [RefObject<HTMLElement | null>, boolean] {
   const ref = useRef<HTMLElement | null>(null);
@@ -170,8 +171,8 @@ export default function Footer() {
 
           {/* NEW: Legal Links */}
           <div className="ft-nav-links">
-            <a href="/terms" className="ft-nav-link">Legal Terms</a>
-            <a href="/privacy" className="ft-nav-link">Privacy Policy</a>
+            <Link to="/terms" className="ft-nav-link">Legal Terms</Link>
+            <Link to="/privacy" className="ft-nav-link">Privacy Policy</Link>
           </div>
           <p className="ft-copyright">
             © {year} <strong>Canopux Inc.</strong> All rights reserved.
