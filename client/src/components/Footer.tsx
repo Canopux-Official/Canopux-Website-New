@@ -165,16 +165,17 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom */}
         <div className={`ft-bottom${visible ? " in" : ""}`}>
+
+
+          {/* NEW: Legal Links */}
+          <div className="ft-nav-links">
+            <a href="/terms" className="ft-nav-link">Terms & Conditions</a>
+            <a href="/privacy" className="ft-nav-link">Privacy Policy</a>
+          </div>
           <p className="ft-copyright">
             © {year} <strong>Canopux Inc.</strong> All rights reserved.
           </p>
-
-          <div className="ft-status-badge">
-            <div className="ft-status-dot" />
-            <span className="ft-status-text">All systems operational</span>
-          </div>
         </div>
 
       </div>
