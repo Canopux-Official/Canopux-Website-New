@@ -1,14 +1,13 @@
-import React from "react";
 import '../styles/Terms.css';
 
-const Terms: React.FC = () => {
+function Terms() {
   return (
     <>
 
       <div className="legal-wrapper">
         <div className="legal-container">
 
-          <h1>Terms &amp; Conditions</h1>
+          <h1>Legal Terms</h1>
           <div className="legal-meta">Last Updated: March 2026 &nbsp;·&nbsp; Canopux</div>
 
           <p className="legal-intro">
@@ -24,7 +23,7 @@ const Terms: React.FC = () => {
             </p>
           </div>
 
-         
+
 
           <div className="legal-section">
             <h2>2. Use of Website</h2>
@@ -69,8 +68,20 @@ const Terms: React.FC = () => {
               We take reasonable measures to protect your data but cannot guarantee absolute security.
             </p>
           </div>
-
+          <div className="legal-section">
+            <h2>7. Contact Us</h2>
+            <p>
+              If you have any questions about these Terms, please contact us at:
+            </p>
+            <p>
+               <a href="mailto:support@canopux.org" style={{ color: "#3a7bd5" }}>
+                support@canopux.org
+              </a>
+            </p>
+          </div>
         </div>
+
+
       </div>
     </>
   );

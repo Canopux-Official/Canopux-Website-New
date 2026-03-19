@@ -1,7 +1,6 @@
-import React from "react";
 import '../styles/Privacy.css';
 
-const Privacy: React.FC = () => {
+function Privacy() {
   return (
     <>
       <style>{`
@@ -85,8 +84,20 @@ const Privacy: React.FC = () => {
             </ul>
           </div>
 
-          <hr className="privacy-divider" />
 
+          <div className="legal-section">
+            <h2>8. Contact Us</h2>
+            <p>
+              If you have any questions about these Terms, please contact us at:
+            </p>
+            <p>
+              <a href="mailto:support@canopux.org" style={{ color: "#3a7bd5" }}>
+                support@canopux.org
+              </a>
+            </p>
+          </div>
+
+                    <hr className="privacy-divider" />
 
         </div>
       </div>

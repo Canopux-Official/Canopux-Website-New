@@ -170,7 +170,7 @@ export default function Footer() {
 
           {/* NEW: Legal Links */}
           <div className="ft-nav-links">
-            <a href="/terms" className="ft-nav-link">Terms & Conditions</a>
+            <a href="/terms" className="ft-nav-link">Legal Terms</a>
             <a href="/privacy" className="ft-nav-link">Privacy Policy</a>
           </div>
           <p className="ft-copyright">
