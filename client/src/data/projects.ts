@@ -1,4 +1,13 @@
-import type { ComponentType } from "react";
+import type { Node, Edge } from '@xyflow/react'
+import { indocryptArchitecture } from "./architecture/indocrypt.arch";
+import { jjClassesArchitecture } from './architecture/jjclasses.arch';
+import { atsArchitecture } from './architecture/ats.arch';
+import type { ArchitectureData } from "../components/architecture/ProjectArchitectureView";
+
+export type ProjectArchitectureData = {
+  nodes: Node[]
+  edges: Edge[]
+} | undefined
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,7 +51,7 @@ export interface Project {
   images: string[];       // [0] = cover, [1-4] = per slide backgrounds
 
   // ── Architecture (injected by team later)
-  architectureComponent?: ComponentType;
+  architectureData?: ArchitectureData;
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -50,8 +59,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    slug: "jj-institute-of-science",
-    name: "JJ Institute of Science",
+    slug: "student-management-system",
+    name: "Student Management System",
     tagline: "In the pursuit of excellence",
     category: "Education & Management",
     icon: "🎓",
@@ -78,7 +87,7 @@ export const projects: Project[] = [
     liveURL: "https://www.jjinstitute.in/",
 
     purpose:
-      "JJ Institute of Science project is designed to streamline educational administration while providing students with easy access to learning materials and personal academic records. The system enables super admins to control features, admins to manage students and sessions, and students to track their performance in a secure, progressive web application.",
+      "Student Management System project is designed to streamline educational administration while providing students with easy access to learning materials and personal academic records. The system enables super admins to control features, admins to manage students and sessions, and students to track their performance in a secure, progressive web application.",
 
     techDetails: [
       { name: "React + Vite + TypeScript", role: "For building a fast, dynamic, and type-safe frontend" },
@@ -92,7 +101,7 @@ export const projects: Project[] = [
     ],
 
     uniqueness:
-      "JJ Institute of Science platform is a full-fledged education management system that combines dynamic content rendering, session management, secure OTP-based signups, and progressive web app capabilities. It empowers super admins to control features, ensures smooth student and admin interactions, and integrates third-party services like Drive and Cloudinary for enhanced functionality.",
+      "Student Management System platform is a full-fledged education management system that combines dynamic content rendering, session management, secure OTP-based signups, and progressive web app capabilities. It empowers super admins to control features, ensures smooth student and admin interactions, and integrates third-party services like Drive and Cloudinary for enhanced functionality.",
 
     impactDetails: [
       { metric: "Dynamic Content", label: "Landing page updates automatically based on super admin inputs" },
@@ -109,7 +118,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80", // impact
     ],
 
-    architectureComponent: undefined,
+    architectureData: jjClassesArchitecture,
   },
 
   {
@@ -183,13 +192,13 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1600&q=80"
     ],
 
-    architectureComponent: undefined
+    architectureData: atsArchitecture
   },
 
   {
     id: 3,
     slug: "indocrypt2025",
-    name: "IndoCrypt   2025",
+    name: "IndoCrypt 2025",
     tagline: "Premier annual conference on cryptography and information security in India",
     category: "Cybersecurity & Events",
     icon: "🔒",
@@ -229,7 +238,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80",
     ],
 
-    architectureComponent: undefined,
+    architectureData: indocryptArchitecture,
   },
 
   {
@@ -275,7 +284,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80",
     ],
 
-    architectureComponent: undefined,
+    architectureData: undefined,
   },
 ];
 
