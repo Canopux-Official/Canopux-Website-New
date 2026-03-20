@@ -37,9 +37,9 @@ const CONTACT_METHODS = [
       </svg>
     ),
     label: "Email Us",
-    value: "team@canopux.org",
+    value: "hello@canopux.org",
     sub: "We reply within 30 minutes",
-    href: "mailto:team@canopux.org",
+    href: "mailto:hello@canopux.org",
   },
   {
     icon: (

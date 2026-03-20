@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://canopux.org/sitemap.xml
