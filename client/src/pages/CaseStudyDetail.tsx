@@ -7,11 +7,11 @@ import ProjectArchitectureView from "../components/architecture/ProjectArchitect
 // ─── Slide config ─────────────────────────────────────────────────────────────
 
 const SLIDES = [
-  { id: "cover",      label: "Overview" },
-  { id: "purpose",    label: "Purpose"  },
-  { id: "tech",       label: "Stack"    },
+  { id: "cover", label: "Overview" },
+  { id: "purpose", label: "Purpose" },
+  { id: "tech", label: "Stack" },
   { id: "uniqueness", label: "Approach" },
-  { id: "impact",     label: "Impact"   },
+  { id: "impact", label: "Impact" },
 ] as const;
 
 type SlideId = typeof SLIDES[number]["id"];
@@ -129,14 +129,14 @@ function ArchitecturePlaceholder({ project }: { project: Project }) {
         <div className="csd-arch-ring csd-arch-ring-3" style={{ borderColor: project.accentColor + "10" }} />
         <div className="csd-arch-icon-wrap" style={{ background: project.accentColor + "15", borderColor: project.accentColor + "40" }}>
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style={{ color: project.accentColor }}>
-            <rect x="2"  y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
-            <rect x="13" y="2"  width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <rect x="2" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <rect x="13" y="2" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
             <rect x="13" y="24" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
             <rect x="24" y="13" width="9" height="9" rx="2.5" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="11"  y1="17.5" x2="13"  y2="17.5" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="17.5" y1="11"  x2="17.5" y2="13"  stroke="currentColor" strokeWidth="1.5" />
-            <line x1="17.5" y1="24"  x2="17.5" y2="24"  stroke="currentColor" strokeWidth="1.5" />
-            <line x1="23"  y1="17.5" x2="24"  y2="17.5" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="11" y1="17.5" x2="13" y2="17.5" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="17.5" y1="11" x2="17.5" y2="13" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="17.5" y1="24" x2="17.5" y2="24" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="23" y1="17.5" x2="24" y2="17.5" stroke="currentColor" strokeWidth="1.5" />
             <circle cx="17.5" cy="17.5" r="3" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         </div>
@@ -156,25 +156,25 @@ function ArchitecturePlaceholder({ project }: { project: Project }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function CaseStudyDetail() {
-  const { slug }   = useParams<{ slug: string }>();
-  const navigate   = useNavigate();
-  const project    = getProjectBySlug(slug ?? "");
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const project = getProjectBySlug(slug ?? "");
 
-  const [currentSlide,  setCurrentSlide]  = useState(0);
-  const [prevSlide,     setPrevSlide]     = useState<number | null>(null);
-  const [animating,     setAnimating]     = useState(false);
-  const [direction,     setDirection]     = useState<"next" | "prev">("next");
-  const [archMode,      setArchMode]      = useState(false);
-  const [imgLoaded,     setImgLoaded]     = useState<boolean[]>([false, false, false, false, false]);
-  const [animKey,       setAnimKey]       = useState(0);
-  const [mouse,         setMouse]         = useState({ x: 0.5, y: 0.5 });
-  const [cursorZone,    setCursorZone]    = useState<"left" | "right" | "center">("center");
-  const [counterVisible,setCounterVisible]= useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState<number | null>(null);
+  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [archMode, setArchMode] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean[]>([false, false, false, false, false]);
+  const [animKey, setAnimKey] = useState(0);
+  const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
+  const [cursorZone, setCursorZone] = useState<"left" | "right" | "center">("center");
+  const [counterVisible, setCounterVisible] = useState(false);
 
-  const mouseRef       = useRef({ x: 0.5, y: 0.5 });
-  const rafRef         = useRef<number | null>(null);
+  const mouseRef = useRef({ x: 0.5, y: 0.5 });
+  const rafRef = useRef<number | null>(null);
   const counterTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const animTimeout    = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const animTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // ── Preload images
   useEffect(() => {
@@ -201,9 +201,9 @@ export default function CaseStudyDetail() {
       setMouse({ x: mouseRef.current.x, y: mouseRef.current.y });
       rafRef.current = null;
     });
-    if (nx < 0.25)      setCursorZone("left");
+    if (nx < 0.25) setCursorZone("left");
     else if (nx > 0.75) setCursorZone("right");
-    else                setCursorZone("center");
+    else setCursorZone("center");
   }, [archMode]);
 
   // ── Navigate slides
@@ -227,7 +227,7 @@ export default function CaseStudyDetail() {
     const handler = (e: KeyboardEvent) => {
       if (archMode) return;
       if (e.key === "ArrowRight" || e.key === "ArrowDown") goTo(currentSlide + 1);
-      if (e.key === "ArrowLeft"  || e.key === "ArrowUp")   goTo(currentSlide - 1);
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") goTo(currentSlide - 1);
       if (e.key === "Escape") navigate(-1);
     };
     window.addEventListener("keydown", handler);
@@ -240,7 +240,7 @@ export default function CaseStudyDetail() {
     const target = e.target as HTMLElement;
     if (target.closest("button") || target.closest(".csd-topbar") || target.closest(".csd-nav-dots")) return;
     const x = e.clientX / window.innerWidth;
-    if (x > 0.55)      goTo(currentSlide + 1);
+    if (x > 0.55) goTo(currentSlide + 1);
     else if (x < 0.45) goTo(currentSlide - 1);
   }, [currentSlide, goTo, archMode]);
 
@@ -253,21 +253,21 @@ export default function CaseStudyDetail() {
     );
   }
 
-  const accentRgb  = hexToRgb(project.accentColor);
-  const bgImage    = project.images[currentSlide] ?? project.images[0];
-  const prevBgImg  = prevSlide !== null ? (project.images[prevSlide] ?? project.images[0]) : null;
-  const px  = (mouse.x - 0.5) * 28;
-  const py  = (mouse.y - 0.5) * 16;
+  const accentRgb = hexToRgb(project.accentColor);
+  const bgImage = project.images[currentSlide] ?? project.images[0];
+  const prevBgImg = prevSlide !== null ? (project.images[prevSlide] ?? project.images[0]) : null;
+  const px = (mouse.x - 0.5) * 28;
+  const py = (mouse.y - 0.5) * 16;
   const px2 = (mouse.x - 0.5) * -14;
   const py2 = (mouse.y - 0.5) * -8;
 
   const renderSlide = (index: number, key: number) => {
     const id = SLIDES[index].id as SlideId;
-    if (id === "cover")      return <CoverSlide      project={project} animKey={key} />;
-    if (id === "purpose")    return <PurposeSlide    project={project} animKey={key} />;
-    if (id === "tech")       return <TechSlide       project={project} animKey={key} />;
+    if (id === "cover") return <CoverSlide project={project} animKey={key} />;
+    if (id === "purpose") return <PurposeSlide project={project} animKey={key} />;
+    if (id === "tech") return <TechSlide project={project} animKey={key} />;
     if (id === "uniqueness") return <UniquenessSlide project={project} animKey={key} />;
-    if (id === "impact")     return <ImpactSlide     project={project} animKey={key} />;
+    if (id === "impact") return <ImpactSlide project={project} animKey={key} />;
     return null;
   };
 
@@ -570,12 +570,42 @@ export default function CaseStudyDetail() {
         @media (max-width: 768px) {
           .csd-topbar { padding: 18px 22px; }
           .csd-topbar-name { display: none; }
-          .csd-stage { padding: 88px 24px 100px 24px; }
+          
+          /* Fix stage padding so text isn't cut off */
+          .csd-stage { padding: 88px 28px 100px 28px; }
+          
           .csd-nav-dots { display: none; }
           .csd-tech-grid { grid-template-columns: 1fr; }
           .csd-counter { right: 22px; bottom: 28px; }
-          .csd-cover-title { font-size: clamp(48px, 12vw, 72px); }
+          
+          /* Scale down cover title so it wraps cleanly */
+          .csd-cover-title { 
+            font-size: clamp(32px, 9vw, 52px);
+            white-space: normal;
+            word-break: break-word;
+          }
+          
+          /* Scale down slide titles */
+          .csd-slide-title {
+            font-size: clamp(26px, 6vw, 38px);
+          }
+          
+          /* Hide geometric elements */
           .csd-geo-1, .csd-geo-2, .csd-geo-3 { display: none; }
+          
+          /* Impact grid — smaller boxes, no overflow */
+          .csd-impact-item { padding: 14px 0; }
+          .csd-impact-metric { font-size: clamp(16px, 5vw, 22px); }
+          .csd-impact-label  { font-size: 12px; }
+          
+          /* Tech grid items smaller */
+          .csd-tech-item { padding: 13px 14px; }
+          .csd-tech-name { font-size: 13px; }
+          .csd-tech-role { font-size: 11px; }
+
+          /* Body text */
+          .csd-slide-body { font-size: 14px; }
+          .csd-cover-tagline { font-size: 14px; }
         }
       `}</style>
 
