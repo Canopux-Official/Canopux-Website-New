@@ -239,16 +239,19 @@ export default function About() {
             </div>
             <div className="ab-mission-right">
               <div className="ab-mission-quote">
-                "We exist to close the gap between what companies <span className="mq-accent">imagine</span> and what technology can actually deliver — with precision, speed, and zero compromise."
+                "We don’t just build products, we build leverage.
+                What you imagine, we engineer into reality, faster, sharper, and built to scale."
+                {/* <span className="mq-accent">imagine</span> */}
               </div>
               <p className="ab-mission-body">
-                At Canopux, we believe every ambitious company deserves engineering partners who take their vision seriously — who question assumptions, push back when needed, and always ship with purpose. We don't pad timelines or pad invoices. We just build.
+                At Canopux, we work like partners, not vendors.
+                We challenge ideas, refine execution, and focus on what actually moves the needle.
+                No unnecessary features. No wasted time. Just real outcomes.
               </p>
               <div className="ab-mission-author">
-                <div className="ab-mission-avatar">PS</div>
+                <div className="ab-mission-avatar">CP</div>
                 <div>
-                  <strong className="ab-mission-author-name">Pratik Sourav Panda</strong>
-                  <div className="ab-mission-author-title">Founder, Canopux</div>
+                  <strong className="ab-mission-author-name">Team Canopux</strong>
                 </div>
               </div>
             </div>

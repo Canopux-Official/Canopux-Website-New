@@ -3,6 +3,9 @@ import { indocryptArchitecture } from "./architecture/indocrypt.arch";
 import { jjClassesArchitecture } from './architecture/jjclasses.arch';
 import { atsArchitecture } from './architecture/ats.arch';
 import type { ArchitectureData } from "../components/architecture/ProjectArchitectureView";
+import { autoCheckArchitecture } from './architecture/autocheck.arch';
+import { beatyxArchitecture } from './architecture/beatyx.arch';
+import { constructArchitecture } from './architecture/construct.arch';
 
 export type ProjectArchitectureData = {
   nodes: Node[]
@@ -37,7 +40,7 @@ export interface Project {
 
   // ── Card fields (existing)
   techStack: string[];    // plain names for card tags
-  impact: string;   
+  impact: string;
   liveURL: string;      // single-line for card
 
   // ── Detail view fields (new)
@@ -69,16 +72,16 @@ export const projects: Project[] = [
     gradientTo: "#2563EB",
 
     techStack: [
-      "React", 
-      "Vite", 
-      "TypeScript", 
-      "Material UI", 
-      "Framer Motion", 
-      "Node.js", 
-      "Express.js", 
-      "MongoDB", 
-      "OAuth", 
-      "Cloudinary", 
+      "React",
+      "Vite",
+      "TypeScript",
+      "Material UI",
+      "Framer Motion",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "OAuth",
+      "Cloudinary",
       "Google Drive Integration"
     ],
 
@@ -123,6 +126,218 @@ export const projects: Project[] = [
 
   {
     id: 2,
+    slug: "BuildCentral",
+    name: "BuildCentral",
+    tagline: "All Construction Project Management in One Place",
+    category: "Construction & Management",
+    icon: "🏗️",
+    accentColor: "#2563EB",
+    gradientFrom: "#3B82F6",
+    gradientTo: "#1E40AF",
+
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Chart.js",
+      "TypeScript",
+    ],
+
+    impact: "A centralized platform consolidating project, resource, labor, document, client communication, and budget management dashboards for construction projects.",
+
+    liveURL: "https://buildmaster-hub.vercel.app/",
+
+    purpose:
+      "Unified Construction Dashboard merges six core modules—Project Management, Resource & Inventory, Labor Management, Document & Compliance, Client Communication, and Cost & Budget Management—into a single cohesive platform. Each module is a feature, accessible via the navbar, enabling seamless construction project oversight and decision-making.",
+
+    techDetails: [
+      { name: "React + TypeScript", role: "For a dynamic and type-safe frontend" },
+      { name: "Tailwind CSS", role: "For consistent, responsive UI styling" },
+      { name: "Chart.js", role: "Interactive charts for data visualization across modules" },
+    ],
+
+    uniqueness:
+      "Unlike separate dashboards, this platform unifies all major construction management aspects under one interface. Each module is feature-driven, ensuring smooth transitions, centralized control, and modular scalability.",
+
+    impactDetails: [
+      { metric: "Project Management", label: "Track tasks, milestones, and timelines with interactive cards and Gantt charts" },
+      { metric: "Resource Management", label: "Monitor materials, stock levels, and low-stock alerts efficiently" },
+      { metric: "Labor Management", label: "Manage attendance, payroll, and task assignments with real-time updates" },
+      { metric: "Document Management", label: "Track contracts, blueprints, and compliance documents with version control" },
+      { metric: "Client Communication", label: "Provide real-time updates, milestone tracking, and secure document sharing" },
+      { metric: "Cost & Budget Management", label: "Visualize expenses, budgets, and live updates with interactive charts" },
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1581090700227-6ec12d449f4c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1581091870622-8122b8030f6c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1581090469130-2b0a04f3f23f?w=1600&q=80",
+      "https://images.unsplash.com/photo-1581091870296-fb28fefaa1a4?w=1600&q=80",
+      "https://images.unsplash.com/photo-1581090469152-6b4e1f8b1f88?w=1600&q=80",
+    ],
+
+    architectureData: constructArchitecture,
+  },
+
+
+
+  {
+    id: 3,
+    slug: "indocrypt2025",
+    name: "IndoCrypt 2025",
+    tagline: "Premier annual conference on cryptography and information security in India",
+    category: "Cybersecurity & Events",
+    icon: "🔒",
+    accentColor: "#10B981",
+    gradientFrom: "#10B981",
+    gradientTo: "#059669",
+
+    techStack: ["React", "Vite", "JavaScript", "Framer Motion"],
+    impact: "Largest gathering of cryptography experts in India",
+
+    liveURL: "https://www.indocrypt2025.in/",
+
+    purpose:
+      "IndoCrypt 2025 is designed to bring together researchers, practitioners, and enthusiasts in cryptography and information security. The conference facilitates knowledge sharing, networking, and collaboration, while highlighting cutting-edge research and emerging security technologies in India and worldwide.",
+
+    techDetails: [
+      { name: "React", role: "For building a responsive and interactive front-end" },
+      { name: "Vite", role: "Lightning-fast build tool for development and production" },
+      { name: "JavaScript", role: "Core programming language enabling dynamic content" },
+      { name: "Framer Motion", role: "Adds smooth animations and transitions to UI elements" },
+    ],
+
+    uniqueness:
+      "IndoCrypt 2025 is the flagship cryptography event in India, combining academic rigor with real-world application. It showcases the latest research papers, workshops, and keynote talks from international experts. With high visibility SEO, its website ensures global accessibility and maximized outreach for participants and sponsors alike.",
+
+    impactDetails: [
+      { metric: "Top SEO", label: "conference website ranks at the top of Google searches" },
+      { metric: "Hundreds+", label: "research papers and projects showcased" },
+      { metric: "500+", label: "participants including students, professionals, and researchers" },
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80",
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80",
+    ],
+
+    architectureData: indocryptArchitecture,
+  },
+
+  {
+    id: 4,
+    slug: "auto-check",
+    name: "Auto Check",
+    tagline: "Smart Vehicle Verification, Simplified",
+    category: "Automobile & Safety",
+    icon: "🚗",
+    accentColor: "#EF4444",
+    gradientFrom: "#EF4444",
+    gradientTo: "#B91C1C",
+
+    techStack: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Supabase",
+      // Google Sign-In to be added later
+    ],
+
+    impact: "A platform to detect scams, tampered odometers, and hidden accidents before buying a used vehicle.",
+
+    liveURL: "https://auto-check-theta.vercel.app/",
+
+    purpose:
+      "Auto Check allows users to upload a vehicle ID to retrieve detailed information about the vehicle, including accident history, actual market price (AI-based, under development), and registration details. Users can also register new vehicles securely.",
+
+    techDetails: [
+      { name: "React + Vite + TypeScript", role: "For building a fast, type-safe, and dynamic frontend" },
+      { name: "Supabase", role: "Backend as a service for database, authentication, and hosting" },
+      { name: "Google Sign-In (coming)", role: "Future integration for secure and fast user login" },
+    ],
+
+    uniqueness:
+      "Auto Check uniquely combines vehicle ID verification with AI-powered market price predictions (under development), accident history detection, and tamper detection in a user-friendly Progressive Web App interface.",
+
+    impactDetails: [
+      { metric: "Vehicle Verification", label: "Get detailed vehicle history using uploaded ID" },
+      { metric: "Accident Detection", label: "Detect hidden accidents and tampered odometers" },
+      { metric: "AI Price Estimation", label: "Predicts current market value of the vehicle (under development)" },
+      { metric: "Vehicle Registration", label: "Users can register new vehicles securely" },
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=1600&q=80",
+      "https://images.unsplash.com/photo-1585852125037-9a3b1f07b5f5?w=1600&q=80",
+      "https://images.unsplash.com/photo-1616627562486-fd65f8230a19?w=1600&q=80",
+      "https://images.unsplash.com/photo-1606813903372-0db69eb2a5b3?w=1600&q=80",
+      "https://images.unsplash.com/photo-1563720224438-507c2a9e9886?w=1600&q=80",
+    ],
+
+    architectureData: autoCheckArchitecture
+  },
+  {
+    id: 5,
+    slug: "beatyx",
+    name: "Beatyx - Beat The Bits",
+    tagline: "Elevate your music streaming experience 🎵",
+    category: "Music & Entertainment",
+    icon: "🎧",
+    accentColor: "#1DB954",
+    gradientFrom: "#1DB954",
+    gradientTo: "#14833b",
+
+    techStack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6)",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Spotify Web API",
+      "OAuth 2.0"
+    ],
+
+    impact: "A full-stack music streaming platform allowing users to explore playlists, stream tracks seamlessly, and discover trending songs in real-time.",
+
+    liveURL: "https://beatyx.vercel.app/",
+
+    purpose:
+      "Beatyx enables users to stream music, manage playlists, and search for tracks, albums, and artists via Spotify integration. It provides a secure login using OAuth 2.0 and a smooth backend-to-frontend communication with REST APIs.",
+
+    techDetails: [
+      { name: "React", role: "Frontend framework for interactive UI" },
+      { name: "Node.js + Express.js", role: "Backend server handling routes, APIs, and authentication" },
+      { name: "MongoDB", role: "Database for user and playlist management" },
+      { name: "Spotify Web API", role: "Fetches and manages music, playlists, and artist data" },
+      { name: "OAuth 2.0", role: "Secure authentication for user login and session management" },
+    ],
+
+    uniqueness:
+      "Beatyx combines real-time trending music, secure Spotify integration, dynamic playlist management, and offline-ready streaming, offering a personalized and immersive music experience.",
+
+    impactDetails: [
+      { metric: "Dynamic Streaming", label: "Seamlessly stream music globally without interruptions or ads" },
+      { metric: "Trending Songs", label: "Access real-time trending music in India and worldwide" },
+      { metric: "Search & Discovery", label: "Powerful search to discover artists, albums, and playlists" },
+      { metric: "Secure OAuth Login", label: "Safe authentication and session persistence" },
+      { metric: "REST APIs", label: "Smooth communication between frontend and backend" },
+    ],
+
+    images: [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1600&q=80",
+      "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?w=1600&q=80",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1600&q=80",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
+      "https://images.unsplash.com/photo-1511671782779-1f9f7d2e7f8e?w=1600&q=80",
+    ],
+
+    architectureData: beatyxArchitecture,
+  },
+  {
+    id: 6,
     slug: "ai-ats-resume-screening",
     name: "AI ATS",
     tagline: "AI-powered resume screening and job matching platform for smarter hiring",
@@ -194,99 +409,7 @@ export const projects: Project[] = [
 
     architectureData: atsArchitecture
   },
-
-  {
-    id: 3,
-    slug: "indocrypt2025",
-    name: "IndoCrypt 2025",
-    tagline: "Premier annual conference on cryptography and information security in India",
-    category: "Cybersecurity & Events",
-    icon: "🔒",
-    accentColor: "#10B981",
-    gradientFrom: "#10B981",
-    gradientTo: "#059669",
-
-    techStack: ["React", "Vite", "JavaScript", "Framer Motion"],
-    impact: "Largest gathering of cryptography experts in India",
-
-    liveURL: "https://www.indocrypt2025.in/",
-
-    purpose:
-      "IndoCrypt 2025 is designed to bring together researchers, practitioners, and enthusiasts in cryptography and information security. The conference facilitates knowledge sharing, networking, and collaboration, while highlighting cutting-edge research and emerging security technologies in India and worldwide.",
-
-    techDetails: [
-      { name: "React", role: "For building a responsive and interactive front-end" },
-      { name: "Vite", role: "Lightning-fast build tool for development and production" },
-      { name: "JavaScript", role: "Core programming language enabling dynamic content" },
-      { name: "Framer Motion", role: "Adds smooth animations and transitions to UI elements" },
-    ],
-
-    uniqueness:
-      "IndoCrypt 2025 is the flagship cryptography event in India, combining academic rigor with real-world application. It showcases the latest research papers, workshops, and keynote talks from international experts. With high visibility SEO, its website ensures global accessibility and maximized outreach for participants and sponsors alike.",
-
-    impactDetails: [
-      { metric: "Top SEO", label: "conference website ranks at the top of Google searches" },
-      { metric: "Hundreds+", label: "research papers and projects showcased" },
-      { metric: "500+", label: "participants including students, professionals, and researchers" },
-    ],
-
-    images: [
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80",
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80",
-    ],
-
-    architectureData: indocryptArchitecture,
-  },
-
-  {
-    id: 4,
-    slug: "vaultsync",
-    name: "VaultSync",
-    tagline: "Zero-trust cloud data pipeline with end-to-end encryption",
-    category: "Cloud & DevOps",
-    icon: "⬡",
-    accentColor: "#10B981",
-    gradientFrom: "#10B981",
-    gradientTo: "#0ECFB0",
-
-    techStack: ["Go", "Terraform", "Vault", "GCP"],
-    impact: "99.99% data integrity SLA",
-
-    liveURL: "",
-
-    purpose:
-      "A fintech handling sensitive customer financial records needed to migrate 12TB of data across cloud providers with zero tolerance for breach or loss. VaultSync was built as a secure-by-default pipeline — every byte encrypted in transit and at rest, every transfer auditable end to end.",
-
-    techDetails: [
-      { name: "Go", role: "High-throughput pipeline workers with concurrent stream handling" },
-      { name: "Terraform", role: "Infrastructure as code for reproducible multi-cloud deployment" },
-      { name: "Vault", role: "Dynamic secrets and encryption-as-a-service for all data paths" },
-      { name: "GCP", role: "Primary cloud target with CMEK and VPC Service Controls" },
-    ],
-
-    uniqueness:
-      "VaultSync operates on a zero-trust model — no implicit trust between any services, every operation authenticated and logged. The pipeline is resumable: interrupted transfers pick up at byte-level without duplication. A full immutable audit trail is generated per transfer, accepted by financial regulators.",
-
-    impactDetails: [
-      { metric: "99.99%", label: "data integrity across all transfers" },
-      { metric: "12 TB", label: "migrated with zero incidents" },
-      { metric: "0", label: "security findings in third-party audit" },
-    ],
-
-    images: [
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1600&q=80",
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1600&q=80",
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80",
-      "https://images.unsplash.com/photo-1560732488-6b0df240254a?w=1600&q=80",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80",
-    ],
-
-    architectureData: undefined,
-  },
-];
+]
 
 
 
