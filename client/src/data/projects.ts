@@ -87,7 +87,7 @@ export const projects: Project[] = [
 
     impact: "A comprehensive and dynamic educational management system enhancing student and admin experiences",
 
-    liveURL: "https://www.jjinstitute.in/",
+    liveURL: "https://sms-canopux-18ui.vercel.app/",
 
     purpose:
       "Student Management System project is designed to streamline educational administration while providing students with easy access to learning materials and personal academic records. The system enables super admins to control features, admins to manage students and sessions, and students to track their performance in a secure, progressive web application.",
