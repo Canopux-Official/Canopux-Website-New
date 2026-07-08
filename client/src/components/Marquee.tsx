@@ -3,10 +3,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import "../styles/Marquee.css";
 
 import img1 from "../assets/img1.jpeg";
-import img2 from "../assets/img2.png";
 import img3 from "../assets/img3.png";
 import img4 from "../assets/img4.jpeg";
-import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
 import mathSuperhighwayLogo from "../assets/math-superhighway.png";
 import kkrMahilaLogo from "../assets/kkr-mahila-logo.png";
@@ -18,38 +16,52 @@ const AUTO_SCROLL_DURATION = 38;
 
 /* Partner logos with descriptive alt text */
 const logos = [
-  { src: img1, alt: "Partner company technology logo" },
-  { src: img2, alt: "Startup partner brand logo" },
-  { src: img3, alt: "Enterprise partner company logo" },
-  { src: img4, alt: "Digital product partner logo" },
-  { src: img5, alt: "Technology partner company logo" },
-  { src: img6, alt: "Cloud services partner logo" },
   {
-    src: mathSuperhighwayLogo,
-    alt: "MATH SUPERHIGHWAY partner logo",
-    name: "MATH SUPERHIGHWAY",
+    src: img4,
+    name: "IEEE",
+    alt: "IEEE partner logo",
+  },
+  {
+    src: img1,
+    name: "IEEE InGARSS 2025",
+    alt: "IEEE InGARSS 2025 partner logo",
+  },
+  {
+    src: img3,
+    name: "IIIT Bhubaneswar",
+    alt: "IIIT Bhubaneswar partner logo",
+  },
+  {
+    src: img6,
+    name: "JJ Institute of Science",
+    alt: "JJ Institute of Science partner logo",
   },
   {
     src: kkrMahilaLogo,
-    alt: "KKR Mahila Higher Secondary School partner logo",
     name: "KKR Mahila Higher Secondary School",
-  },
-  {
-    src: priyaanshiiLogo,
-    alt: "Priyaanshii Tasteworks Pvt. Ltd. partner logo",
-    name: "Priyaanshii Tasteworks Pvt. Ltd.",
-  },
-  {
-    src: shipMyParcelLogo,
-    alt: "Ship My Parcel partner logo",
-    name: "Ship My Parcel",
+    alt: "KKR Mahila Higher Secondary School partner logo",
   },
   {
     src: madeInCartLogo,
-    alt: "Made in Cart partner logo",
     name: "Made in Cart",
+    alt: "Made in Cart partner logo",
   },
-];
+  {
+    src: mathSuperhighwayLogo,
+    name: "MATH SUPERHIGHWAY",
+    alt: "MATH SUPERHIGHWAY partner logo",
+  },
+  {
+    src: priyaanshiiLogo,
+    name: "Priyaanshii Tasteworks Pvt. Ltd.",
+    alt: "Priyaanshii Tasteworks Pvt. Ltd. partner logo",
+  },
+  {
+    src: shipMyParcelLogo,
+    name: "Ship My Parcel",
+    alt: "Ship My Parcel partner logo",
+  },
+].sort((a, b) => a.name.localeCompare(b.name));
 
 const repeated = [...logos, ...logos, ...logos];
 
