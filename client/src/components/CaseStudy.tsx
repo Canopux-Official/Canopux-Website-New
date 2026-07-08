@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               style={{
                 background: hovered ? `linear-gradient(135deg, ${project.gradientFrom}, ${project.gradientTo})` : "transparent",
                 borderColor: project.accentColor,
-                color: hovered ? "#fff" : project.accentColor,
+                color: hovered ? "#FFFFFF" : project.accentColor,
               }}
               onClick={(e) => { e.stopPropagation(); navigate(`/case-studies/${project.slug}`); }}
             >

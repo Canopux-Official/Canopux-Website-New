@@ -1,9 +1,12 @@
 import "../styles/Navbar.css";
 import logo from "../assets/logo-black.png";
-import React, { useState, useEffect } from "react";
+import { Phone } from "lucide-react";
+import React, { useState, useEffect, useCallback } from "react";
 
+const SCROLL_THRESHOLD = 50;
+const PHONE_NUMBER = "+918260783152";
+const PHONE_DISPLAY = "+91 82607 83152";
 
-// Navigation configuration.
 const NAV_CONFIG: { label: string; sectionId?: string; href?: string }[] = [
   { label: "Home", sectionId: "home" },
   { label: "Services", sectionId: "services" },
@@ -12,34 +15,69 @@ const NAV_CONFIG: { label: string; sectionId?: string; href?: string }[] = [
   { label: "Contact Us", sectionId: "contact" },
 ];
 
+const getNavOffset = () => {
+  const height = getComputedStyle(document.documentElement)
+    .getPropertyValue("--navbar-height")
+    .trim();
+  if (height.includes("calc")) {
+    const top = parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--navbar-top-offset")
+        .trim(),
+      10
+    ) || 14;
+    const bar = parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue("--navbar-bar-height")
+        .trim(),
+      10
+    ) || 72;
+    return top + bar;
+  }
+  return parseInt(height, 10) || 86;
+};
+
+const scrollToSection = (sectionId: string) => {
+  const target = document.getElementById(sectionId);
+  if (!target) return;
+
+  const offset =
+    target.getBoundingClientRect().top + window.scrollY - getNavOffset();
+
+  window.scrollTo({ top: offset, behavior: "smooth" });
+};
 
 const Navbar: React.FC = () => {
-
   const [scrolled, setScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-
-  // Add shadow when scrolling.
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [])
+  }, []);
 
+  useEffect(() => {
+    const barHeight = scrolled ? "60px" : "72px";
+    const topOffset = scrolled ? "10px" : "14px";
+    document.documentElement.style.setProperty("--navbar-bar-height", barHeight);
+    document.documentElement.style.setProperty("--navbar-top-offset", topOffset);
+    document.documentElement.style.setProperty(
+      "--navbar-height",
+      `calc(${topOffset} + ${barHeight})`
+    );
+  }, [scrolled]);
 
-  // Close mobile menu on desktop resize.
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 1024) setMenuOpen(false);
     };
-
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-
-  // Prevent body scroll when menu open.
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -47,108 +85,84 @@ const Navbar: React.FC = () => {
     };
   }, [menuOpen]);
 
-
-  // Highlight active nav item based on scroll position.
   useEffect(() => {
-    const sections = NAV_CONFIG
-      .map((item) => item.sectionId)
-      .filter(Boolean)
-      .map((id) => document.getElementById(id!));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const activeSection = NAV_CONFIG.find(
-              (item) => item.sectionId === entry.target.id
-            );
-
-            if (activeSection) {
-              setActiveItem(activeSection.label);
-            }
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "-40% 0px -55% 0px",
-        threshold: 0,
-      }
-    );
-
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
+  useEffect(() => {
+    const updateActiveSection = () => {
+      if (window.scrollY < 80) {
+        setActiveItem("Home");
+        return;
+      }
 
-  // Navigation click handler.
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    item: (typeof NAV_CONFIG)[number]
-  ) => {
-    if (item.href) return;
+      const scrollPos = window.scrollY + getNavOffset() + 32;
+      let active = NAV_CONFIG[0].label;
 
-    e.preventDefault();
-    setActiveItem(item.label);
+      for (const item of NAV_CONFIG) {
+        if (!item.sectionId) continue;
+        const el = document.getElementById(item.sectionId);
+        if (el && el.offsetTop <= scrollPos) {
+          active = item.label;
+        }
+      }
+
+      setActiveItem(active);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [scrolled]);
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, item: (typeof NAV_CONFIG)[number]) => {
+      if (item.href) return;
+      e.preventDefault();
+      setActiveItem(item.label);
+      setMenuOpen(false);
+      if (item.sectionId) scrollToSection(item.sectionId);
+    },
+    []
+  );
+
+  const handleCtaClick = useCallback(() => {
     setMenuOpen(false);
+    scrollToSection("contact");
+  }, []);
 
-    if (!item.sectionId) return;
-
-    const target = document.getElementById(item.sectionId);
-
-    if (target) {
-      const offset = target.getBoundingClientRect().top + window.scrollY - 68;
-
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
-      });
-    }
-  };
-
-
-  // CTA button scroll.
-  const handleCtaClick = () => {
-    setMenuOpen(false);
-
-    const target = document.getElementById("contact");
-
-    if (target) {
-      const offset = target.getBoundingClientRect().top + window.scrollY - 68;
-
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
-      });
-    }
-  };
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   return (
     <div className="navbar-root">
-      <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
-        <nav aria-label="Primary Navigation" id="main-navigation">
+      <header
+        className={`navbar-header${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}
+      >
+        <nav aria-label="Primary navigation" id="main-navigation">
           <div className="navbar-inner">
-
-            {/* Logo */}
-            <a href="/" className="logo-wrap" aria-label="Go to homepage">
+            <a href="/" className="logo-wrap" aria-label="Canopux home">
               <img
                 src={logo}
-                alt="Canopux - IT & Web Solutions Agency"
+                alt="Canopux"
                 className="logo-img"
                 loading="eager"
               />
             </a>
 
-            {/* Desktop Navigation */}
             <ul className="nav-list" role="list">
               {NAV_CONFIG.map((item) => (
                 <li key={item.label} className="nav-item">
                   <a
                     href={item.href ?? `#${item.sectionId}`}
-                    className={activeItem === item.label ? "active" : ""}
+                    className={activeItem === item.label ? "active" : undefined}
                     aria-current={
                       activeItem === item.label ? "page" : undefined
                     }
@@ -160,53 +174,29 @@ const Navbar: React.FC = () => {
               ))}
             </ul>
 
-            {/* Right side (phone + CTA) */}
             <div className="navbar-right">
               <a
-                href="tel:+918260783152"
+                href={`tel:${PHONE_NUMBER}`}
                 className="phone-wrap"
-                aria-label="Call us at +91 82607 83152"
-                style={{ textDecoration: "none" }}
+                aria-label={`Call us at ${PHONE_DISPLAY}`}
               >
-                <div className="phone-icon-ring">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="url(#phoneGrad)"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="phoneGrad"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="100%"
-                      >
-                        <stop offset="0%" stopColor="#2dd4bf" />
-                        <stop offset="100%" stopColor="#3b82f6" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                  </svg>
-                </div>
-                <span>+91 82607 83152</span>
+                <span className="phone-icon-ring" aria-hidden="true">
+                  <Phone size={16} strokeWidth={2} />
+                </span>
               </a>
 
-              <div className="divider" />
-
-              <button className="cta-btn" onClick={handleCtaClick}>
-                <span>Let's Build</span>
+              <button
+                type="button"
+                className="cta-btn"
+                onClick={handleCtaClick}
+              >
+                Let&apos;s Build
               </button>
             </div>
 
-            {/* Hamburger Menu */}
             <button
-              className={`hamburger ${menuOpen ? "open" : ""}`}
+              type="button"
+              className={`hamburger${menuOpen ? " open" : ""}`}
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-controls="mobile-navigation"
@@ -216,23 +206,44 @@ const Navbar: React.FC = () => {
               <span />
               <span />
             </button>
-
           </div>
         </nav>
       </header>
 
-      {/* Mobile Menu */}
-      <div
-        id="mobile-navigation"
-        className={`mobile-menu ${menuOpen ? "open" : ""}`}
+      <button
+        type="button"
+        className={`mobile-backdrop${menuOpen ? " open" : ""}`}
+        aria-label="Close menu"
         aria-hidden={!menuOpen}
+        tabIndex={menuOpen ? 0 : -1}
+        onClick={closeMenu}
+      />
+
+      <aside
+        id="mobile-navigation"
+        className={`mobile-menu${menuOpen ? " open" : ""}`}
+        aria-hidden={!menuOpen}
+        aria-label="Mobile navigation"
       >
+        <div className="mobile-menu-header">
+          <span className="mobile-menu-label">Menu</span>
+          <button
+            type="button"
+            className="mobile-close"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <span />
+            <span />
+          </button>
+        </div>
+
         <ul className="mobile-nav-list" role="list">
           {NAV_CONFIG.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href ?? `#${item.sectionId}`}
-                className={activeItem === item.label ? "active" : ""}
+                className={activeItem === item.label ? "active" : undefined}
                 aria-current={activeItem === item.label ? "page" : undefined}
                 onClick={(e) => handleNavClick(e, item)}
               >
@@ -244,20 +255,24 @@ const Navbar: React.FC = () => {
 
         <div className="mobile-bottom">
           <a
-            href="tel:+918260783152"
+            href={`tel:${PHONE_NUMBER}`}
             className="mobile-phone"
-            aria-label="Call us at +91 82607 83152"
+            aria-label={`Call us at ${PHONE_DISPLAY}`}
           >
-            <span>+91 82607 83152</span>
+            <span className="phone-icon-ring" aria-hidden="true">
+              <Phone size={18} strokeWidth={2} />
+            </span>
           </a>
 
-          <div className="mobile-cta">
-            <button className="cta-btn" onClick={handleCtaClick}>
-              <span>Let's Build</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            className="cta-btn cta-btn--full"
+            onClick={handleCtaClick}
+          >
+            Let&apos;s Build
+          </button>
         </div>
-      </div>
+      </aside>
     </div>
   );
 };

@@ -17,7 +17,7 @@
 /* ── Root ── */
 .sv-root {
   font-family: "DM Sans", sans-serif;
-  background: #fafcff;
+  background: #f8f9fa;
   position: relative;
   overflow: hidden;
 }
@@ -31,12 +31,12 @@
   background:
     radial-gradient(
       ellipse 75% 55% at 5% 12%,
-      rgba(224, 242, 254, 0.5) 0%,
+      rgba(238, 243, 245, 0.5) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 65% 50% at 94% 8%,
-      rgba(204, 251, 241, 0.4) 0%,
+      rgba(238, 243, 245, 0.4) 0%,
       transparent 55%
     ),
     radial-gradient(
@@ -49,7 +49,7 @@
       rgba(240, 249, 255, 0.4) 0%,
       transparent 60%
     ),
-    linear-gradient(158deg, #f0f9ff 0%, #fafcff 38%, #f8faff 65%, #f0fdf8 100%);
+    linear-gradient(158deg, #F8F9FA 0%, #FFFFFF 38%, #FFFFFF 65%, #F8F9FA 100%);
 }
 .sv-aurora {
   position: absolute;
@@ -62,7 +62,7 @@
   height: 440px;
   background: radial-gradient(
     ellipse,
-    rgba(45, 212, 191, 0.1) 0%,
+    rgba(95, 134, 165, 0.1) 0%,
     rgba(56, 189, 248, 0.05) 45%,
     transparent 70%
   );
@@ -76,8 +76,8 @@
   height: 400px;
   background: radial-gradient(
     ellipse,
-    rgba(99, 102, 241, 0.08) 0%,
-    rgba(59, 130, 246, 0.05) 50%,
+    rgba(95, 134, 165, 0.08) 0%,
+    rgba(95, 134, 165, 0.05) 50%,
     transparent 70%
   );
   filter: blur(76px);
@@ -173,14 +173,14 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 900;
-  color: #0f172a;
+  color: #111827;
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-top: 4px;
 }
 
 .sv-intro-grad {
-  background: linear-gradient(135deg, #2dd4bf 0%, #3b82f6 60%, #6366f1 100%);
+  background: linear-gradient(135deg, #5F86A5 0%, #5F86A5 60%, #5F86A5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -189,7 +189,7 @@
 .sv-intro-sub {
   max-width: 340px;
   font-size: 0.875rem;
-  color: #94a3b8;
+  color: #6B7280;
   line-height: 1.8;
   font-weight: 400;
   padding-bottom: 6px;
@@ -206,13 +206,13 @@
 .sv-eyebrow-line {
   width: 20px;
   height: 1.5px;
-  background: linear-gradient(90deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(90deg, #5F86A5, #5F86A5);
   border-radius: 2px;
 }
 .sv-eyebrow-text {
   font-size: 0.68rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #6B7280;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -273,7 +273,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: #6B7280;
   margin-bottom: 28px;
 }
 
@@ -336,21 +336,21 @@
   font-family: "Sora", sans-serif;
   font-size: 1.45rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.03em;
   margin-top: 26px;
   line-height: 1.15;
 }
 .sv-feat-short {
   font-size: 0.85rem;
-  color: #64748b;
+  color: #6B7280;
   line-height: 1.7;
   margin-top: 8px;
   font-weight: 400;
 }
 .sv-feat-desc {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: #6B7280;
   line-height: 1.8;
   margin-top: 14px;
   font-weight: 300;
@@ -367,13 +367,13 @@
   gap: 10px;
   font-size: 0.79rem;
   font-weight: 500;
-  color: #334155;
+  color: #111827;
 }
 .sv-feat-check {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,7 +404,7 @@
   font-size: 0.64rem;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.9);
-  color: #475569;
+  color: #6B7280;
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
@@ -419,12 +419,12 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #e2e8f0;
+  background: #E5E7EB;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .sv-dot.active {
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   transform: scale(1.55);
 }
 
@@ -464,8 +464,8 @@
   border-radius: 10px;
   background: linear-gradient(
     135deg,
-    rgba(45, 212, 191, 0.1),
-    rgba(59, 130, 246, 0.1)
+    rgba(95, 134, 165, 0.1),
+    rgba(95, 134, 165, 0.1)
   );
   display: flex;
   align-items: center;
@@ -477,7 +477,7 @@
   font-family: "Sora", sans-serif;
   font-size: 1.3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -485,7 +485,7 @@
 }
 .sv-stat-label {
   font-size: 0.68rem;
-  color: #94a3b8;
+  color: #6B7280;
   font-weight: 500;
   margin-top: 2px;
 }
@@ -497,29 +497,27 @@
   gap: 12px;
 }
 .sv-card {
-  background: rgba(255, 255, 255, 0.88);
+  background: #ffffff;
   border-radius: 18px;
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  border: 1px solid #e5e7eb;
   padding: 20px 20px 16px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.04);
+  backdrop-filter: blur(8px);
   transition:
     transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.28s,
     border-color 0.25s;
 }
 .sv-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.06);
 }
 .sv-card.active {
-  border-color: rgba(45, 212, 191, 0.4);
-  box-shadow:
-    0 8px 28px rgba(45, 212, 191, 0.14),
-    0 2px 8px rgba(0, 0, 0, 0.04);
+  border-color: #5f86a5;
+  box-shadow: 0 6px 20px rgba(31, 41, 55, 0.07);
 }
 .sv-card::before {
   content: "";
@@ -528,7 +526,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(90deg, #5F86A5, #5F86A5);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -562,12 +560,12 @@
   font-size: 0.59rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: #cbd5e1;
+  color: #E5E7EB;
   transition: color 0.25s;
 }
 .sv-card.active .sv-card-num,
 .sv-card:hover .sv-card-num {
-  color: #94a3b8;
+  color: #6B7280;
 }
 
 .sv-card-icon {
@@ -588,14 +586,14 @@
   font-family: "Sora", sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.02em;
   margin-bottom: 5px;
   line-height: 1.25;
 }
 .sv-card-short {
   font-size: 0.7rem;
-  color: #94a3b8;
+  color: #6B7280;
   line-height: 1.55;
   font-weight: 400;
 }
@@ -611,13 +609,13 @@
 .sv-card-tags-mini {
   font-size: 0.58rem;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #E5E7EB;
   letter-spacing: 0.04em;
   transition: color 0.25s;
 }
 .sv-card.active .sv-card-tags-mini,
 .sv-card:hover .sv-card-tags-mini {
-  color: #94a3b8;
+  color: #6B7280;
 }
 
 .sv-card-arrow {
@@ -630,13 +628,13 @@
   align-items: center;
   justify-content: center;
   font-size: 0.68rem;
-  color: #94a3b8;
+  color: #6B7280;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   flex-shrink: 0;
 }
 .sv-card.active .sv-card-arrow,
 .sv-card:hover .sv-card-arrow {
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   border-color: transparent;
   color: white;
   transform: rotate(-45deg);
@@ -709,13 +707,13 @@
 .ab-eyebrow-line {
   width: 28px;
   height: 1.5px;
-  background: linear-gradient(90deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(90deg, #5F86A5, #5F86A5);
   border-radius: 2px;
 }
 .ab-eyebrow-text {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #64748b;
+  color: #6B7280;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }

@@ -91,7 +91,7 @@ function Privacy() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p>
-              <a href="mailto:support@canopux.org" style={{ color: "#3a7bd5" }}>
+              <a href="mailto:support@canopux.org" style={{ color: "#5F86A5" }}>
                 support@canopux.org
               </a>
             </p>

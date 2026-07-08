@@ -33,7 +33,7 @@ const CONTACT_METHODS = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
         <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="url(#cg1)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        <defs><linearGradient id="cg1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" /></linearGradient></defs>
+        <defs><linearGradient id="cg1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" /></linearGradient></defs>
       </svg>
     ),
     label: "Email Us",
@@ -46,7 +46,7 @@ const CONTACT_METHODS = [
       <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
         <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="url(#cg2)" strokeWidth="1.6" />
         <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="url(#cg2)" strokeWidth="1.6" />
-        <defs><linearGradient id="cg2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" /></linearGradient></defs>
+        <defs><linearGradient id="cg2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" /></linearGradient></defs>
       </svg>
     ),
     label: "Headquarters",
@@ -204,7 +204,7 @@ export default function Contact() {
                   Thanks for reaching out. One of our team members will be in touch within 30 minutes.
                 </p>
                 <div className="ct-success-badge">
-                  <span>🚀</span> We'll send a mail to <strong>{form.email}</strong>
+                  <span>•</span> We'll send a mail to <strong>{form.email}</strong>
                 </div>
               </div>
             ) : (

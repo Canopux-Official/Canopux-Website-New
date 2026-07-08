@@ -9,7 +9,7 @@
 
 .ab-hero {
   font-family: "DM Sans", sans-serif;
-  background: #0c1220;
+  background: #111827;
   position: relative;
   overflow: hidden;
 }
@@ -22,27 +22,27 @@
   background:
     radial-gradient(
       ellipse 70% 50% at 8% 20%,
-      rgba(45, 212, 191, 0.07) 0%,
+      rgba(95, 134, 165, 0.07) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 60% 45% at 92% 15%,
-      rgba(59, 130, 246, 0.07) 0%,
+      rgba(95, 134, 165, 0.07) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 50% 60% at 85% 80%,
-      rgba(99, 102, 241, 0.06) 0%,
+      rgba(95, 134, 165, 0.06) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 65% 45% at 15% 85%,
-      rgba(16, 185, 129, 0.05) 0%,
+      rgba(95, 134, 165, 0.05) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 40% 35% at 50% 50%,
-      rgba(45, 212, 191, 0.03) 0%,
+      rgba(95, 134, 165, 0.03) 0%,
       transparent 65%
     );
 }
@@ -78,7 +78,7 @@
   height: 400px;
   background: radial-gradient(
     ellipse,
-    rgba(45, 212, 191, 0.08) 0%,
+    rgba(95, 134, 165, 0.08) 0%,
     transparent 70%
   );
   filter: blur(80px);
@@ -91,7 +91,7 @@
   height: 380px;
   background: radial-gradient(
     ellipse,
-    rgba(59, 130, 246, 0.07) 0%,
+    rgba(95, 134, 165, 0.07) 0%,
     transparent 70%
   );
   filter: blur(90px);
@@ -104,7 +104,7 @@
   height: 280px;
   background: radial-gradient(
     ellipse,
-    rgba(99, 102, 241, 0.06) 0%,
+    rgba(95, 134, 165, 0.06) 0%,
     transparent 70%
   );
   filter: blur(70px);
@@ -153,9 +153,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(45, 212, 191, 0.4) 25%,
-    rgba(59, 130, 246, 0.5) 50%,
-    rgba(99, 102, 241, 0.4) 75%,
+    rgba(95, 134, 165, 0.4) 25%,
+    rgba(95, 134, 165, 0.5) 50%,
+    rgba(95, 134, 165, 0.4) 75%,
     transparent 100%
   );
 }
@@ -168,7 +168,7 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(45, 212, 191, 0.06) 0%,
+    rgba(95, 134, 165, 0.06) 0%,
     transparent 100%
   );
   pointer-events: none;
@@ -195,8 +195,8 @@
   gap: 10px;
   padding: 6px 16px 6px 8px;
   border-radius: 50px;
-  border: 1px solid rgba(45, 212, 191, 0.18);
-  background: rgba(45, 212, 191, 0.06);
+  border: 1px solid rgba(95, 134, 165, 0.18);
+  background: rgba(95, 134, 165, 0.06);
   backdrop-filter: blur(12px);
   width: fit-content;
   opacity: 0;
@@ -213,7 +213,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,9 +231,9 @@
 .ab-hero-pill-badge {
   font-size: 0.6rem;
   font-weight: 700;
-  color: #5eead4;
+  color: #5F86A5;
   letter-spacing: 0.08em;
-  background: rgba(45, 212, 191, 0.12);
+  background: rgba(95, 134, 165, 0.12);
   padding: 2px 8px;
   border-radius: 50px;
 }
@@ -276,7 +276,7 @@
   margin-bottom: 20px;
 }
 .ab-hero-h1 .grad {
-  background: linear-gradient(135deg, #2dd4bf 0%, #3b82f6 60%, #6366f1 100%);
+  background: linear-gradient(135deg, #5F86A5 0%, #5F86A5 60%, #5F86A5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -356,7 +356,7 @@
   top: 0;
   bottom: 0;
   width: 1.5px;
-  background: linear-gradient(180deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(180deg, #5F86A5, #5F86A5);
   opacity: 0;
   transition: opacity 0.25s;
 }
@@ -414,7 +414,7 @@
     transform 0.25s;
 }
 .ab-cap-row:hover .ab-cap-arrow {
-  color: #2dd4bf;
+  color: #5F86A5;
   transform: translateX(3px);
 }
 
@@ -439,11 +439,11 @@
 }
 .ab-hero-marquee-wrap::before {
   left: 0;
-  background: linear-gradient(90deg, #0c1220, transparent);
+  background: linear-gradient(90deg, #111827, transparent);
 }
 .ab-hero-marquee-wrap::after {
   right: 0;
-  background: linear-gradient(-90deg, #0c1220, transparent);
+  background: linear-gradient(-90deg, #111827, transparent);
 }
 
 .ab-marquee-track {
@@ -476,7 +476,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   flex-shrink: 0;
 }
 
@@ -486,7 +486,7 @@
 
 .ab-root {
   font-family: "DM Sans", sans-serif;
-  background: #fafcff;
+  background: #f8f9fa;
   position: relative;
   overflow: hidden;
 }
@@ -499,12 +499,12 @@
   background:
     radial-gradient(
       ellipse 80% 60% at 15% 10%,
-      rgba(224, 242, 254, 0.55) 0%,
+      rgba(238, 243, 245, 0.55) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 70% 50% at 85% 5%,
-      rgba(204, 251, 241, 0.4) 0%,
+      rgba(238, 243, 245, 0.4) 0%,
       transparent 55%
     ),
     radial-gradient(
@@ -522,7 +522,7 @@
       rgba(248, 250, 252, 0.6) 0%,
       transparent 70%
     ),
-    linear-gradient(160deg, #f0f9ff 0%, #fafcff 40%, #f8faff 70%, #f0fdf8 100%);
+    linear-gradient(160deg, #F8F9FA 0%, #FFFFFF 40%, #FFFFFF 70%, #F8F9FA 100%);
 }
 .ab-aurora {
   position: absolute;
@@ -535,7 +535,7 @@
   height: 500px;
   background: radial-gradient(
     ellipse,
-    rgba(45, 212, 191, 0.12) 0%,
+    rgba(95, 134, 165, 0.12) 0%,
     rgba(56, 189, 248, 0.07) 45%,
     transparent 70%
   );
@@ -549,8 +549,8 @@
   height: 450px;
   background: radial-gradient(
     ellipse,
-    rgba(99, 102, 241, 0.08) 0%,
-    rgba(59, 130, 246, 0.06) 50%,
+    rgba(95, 134, 165, 0.08) 0%,
+    rgba(95, 134, 165, 0.06) 50%,
     transparent 70%
   );
   filter: blur(72px);
@@ -563,8 +563,8 @@
   height: 400px;
   background: radial-gradient(
     ellipse,
-    rgba(16, 185, 129, 0.07) 0%,
-    rgba(45, 212, 191, 0.05) 50%,
+    rgba(95, 134, 165, 0.07) 0%,
+    rgba(95, 134, 165, 0.05) 50%,
     transparent 70%
   );
   filter: blur(80px);
@@ -577,8 +577,8 @@
   height: 300px;
   background: radial-gradient(
     ellipse,
-    rgba(139, 92, 246, 0.06) 0%,
-    rgba(99, 102, 241, 0.04) 50%,
+    rgba(95, 134, 165, 0.06) 0%,
+    rgba(95, 134, 165, 0.04) 50%,
     transparent 70%
   );
   filter: blur(60px);
@@ -664,13 +664,13 @@
 .ab-section-label-line {
   width: 20px;
   height: 1.5px;
-  background: linear-gradient(90deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(90deg, #5F86A5, #5F86A5);
   border-radius: 2px;
 }
 .ab-section-label-text {
   font-size: 0.68rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #6B7280;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -679,14 +679,14 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
   font-weight: 800;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 16px;
 }
 .ab-values-sub {
   font-size: 0.9rem;
-  color: #64748b;
+  color: #6B7280;
   line-height: 1.75;
 }
 
@@ -705,7 +705,7 @@
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: #94a3b8;
+  color: #6B7280;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
@@ -713,13 +713,13 @@
   font-family: "Sora", sans-serif;
   font-size: 1.1rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 .ab-av-desc {
   font-size: 0.83rem;
-  color: #64748b;
+  color: #6B7280;
   line-height: 1.75;
 }
 
@@ -761,7 +761,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(180deg, #5F86A5, #5F86A5);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -788,10 +788,10 @@
 .ab-value-row:hover .ab-val-icon-box {
   background: linear-gradient(
     135deg,
-    rgba(45, 212, 191, 0.08),
-    rgba(59, 130, 246, 0.08)
+    rgba(95, 134, 165, 0.08),
+    rgba(95, 134, 165, 0.08)
   );
-  border-color: rgba(45, 212, 191, 0.25);
+  border-color: rgba(95, 134, 165, 0.25);
   transform: scale(1.08) rotate(-4deg);
 }
 .ab-val-body {
@@ -801,26 +801,26 @@
   font-family: "Sora", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
   transition: color 0.2s;
 }
 .ab-val-desc {
   font-size: 0.83rem;
-  color: #94a3b8;
+  color: #6B7280;
   line-height: 1.65;
   transition: color 0.2s;
 }
 .ab-value-row.active .ab-val-desc,
 .ab-value-row:hover .ab-val-desc {
-  color: #64748b;
+  color: #6B7280;
 }
 .ab-val-num-badge {
   font-family: "Sora", sans-serif;
   font-size: 2.2rem;
   font-weight: 900;
-  color: #f1f5f9;
+  color: #F8F9FA;
   letter-spacing: -0.04em;
   line-height: 1;
   transition: color 0.3s;
@@ -829,7 +829,7 @@
 }
 .ab-value-row.active .ab-val-num-badge,
 .ab-value-row:hover .ab-val-num-badge {
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -862,7 +862,7 @@
   min-height: 280px;
 }
 .ab-mission-left {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #111827 0%, #111827 100%);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -876,7 +876,7 @@
   inset: 0;
   background: radial-gradient(
     ellipse 200px 160px at 80% 30%,
-    rgba(45, 212, 191, 0.15) 0%,
+    rgba(95, 134, 165, 0.15) 0%,
     transparent 60%
   );
   pointer-events: none;
@@ -902,7 +902,7 @@
   z-index: 1;
 }
 .ab-mission-left-title .mg {
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -919,19 +919,19 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   font-weight: 700;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.025em;
   line-height: 1.4;
 }
 .ab-mission-quote .mq-accent {
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .ab-mission-body {
   font-size: 0.9rem;
-  color: #64748b;
+  color: #6B7280;
   line-height: 1.8;
   max-width: 520px;
 }
@@ -945,7 +945,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  background: linear-gradient(135deg, #5F86A5, #5F86A5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -957,11 +957,11 @@
 .ab-mission-author-name {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #334155;
+  color: #111827;
 }
 .ab-mission-author-title {
   font-size: 0.72rem;
-  color: #94a3b8;
+  color: #6B7280;
 }
 
 .ab-light-bottom {

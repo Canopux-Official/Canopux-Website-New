@@ -8,7 +8,7 @@ export type InputNodeData = {
 };
 
 export default function InputNode({ data }: { data: InputNodeData }) {
-  const accent = data.accentColor ?? "#10B981";
+  const accent = data.accentColor ?? "#5F86A5";
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function InputNode({ data }: { data: InputNodeData }) {
         </div>
 
         <div style={{
-          color: "#f2f2f2",
+          color: "#F8F9FA",
           fontFamily: "'DM Sans', 'Inter', sans-serif",
           fontWeight: 700,
           fontSize: "12.5px",

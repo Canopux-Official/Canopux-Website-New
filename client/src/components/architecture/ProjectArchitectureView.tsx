@@ -102,7 +102,7 @@ function buildEdges(rawEdges: RawArchEdge[]): Edge[] {
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function ProjectArchitectureView({
   data,
-  accentColor = "#10B981",
+  accentColor = "#5F86A5",
 }: Props) {
   const initialNodes = useMemo(() => buildLayout(data.nodes), [data.nodes]);
   const initialEdges = useMemo(() => buildEdges(data.edges), [data.edges]);

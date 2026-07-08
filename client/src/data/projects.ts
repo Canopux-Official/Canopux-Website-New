@@ -67,9 +67,9 @@ export const projects: Project[] = [
     tagline: "In the pursuit of excellence",
     category: "Education & Management",
     icon: "🎓",
-    accentColor: "#3B82F6",
-    gradientFrom: "#3B82F6",
-    gradientTo: "#2563EB",
+    accentColor: "#5F86A5",
+    gradientFrom: "#5F86A5",
+    gradientTo: "#5F86A5",
 
     techStack: [
       "React",
@@ -131,9 +131,9 @@ export const projects: Project[] = [
     tagline: "All Construction Project Management in One Place",
     category: "Construction & Management",
     icon: "🏗️",
-    accentColor: "#2563EB",
-    gradientFrom: "#3B82F6",
-    gradientTo: "#1E40AF",
+    accentColor: "#5F86A5",
+    gradientFrom: "#5F86A5",
+    gradientTo: "#5F86A5",
 
     techStack: [
       "React",
@@ -187,9 +187,9 @@ export const projects: Project[] = [
     tagline: "Premier annual conference on cryptography and information security in India",
     category: "Cybersecurity & Events",
     icon: "🔒",
-    accentColor: "#10B981",
-    gradientFrom: "#10B981",
-    gradientTo: "#059669",
+    accentColor: "#6B7280",
+    gradientFrom: "#6B7280",
+    gradientTo: "#6B7280",
 
     techStack: ["React", "Vite", "JavaScript", "Framer Motion"],
     impact: "Largest gathering of cryptography experts in India",
@@ -233,9 +233,9 @@ export const projects: Project[] = [
     tagline: "Smart Vehicle Verification, Simplified",
     category: "Automobile & Safety",
     icon: "🚗",
-    accentColor: "#EF4444",
-    gradientFrom: "#EF4444",
-    gradientTo: "#B91C1C",
+    accentColor: "#5F86A5",
+    gradientFrom: "#5F86A5",
+    gradientTo: "#5F86A5",
 
     techStack: [
       "React",
@@ -284,9 +284,9 @@ export const projects: Project[] = [
     tagline: "Elevate your music streaming experience 🎵",
     category: "Music & Entertainment",
     icon: "🎧",
-    accentColor: "#1DB954",
-    gradientFrom: "#1DB954",
-    gradientTo: "#14833b",
+    accentColor: "#6B7280",
+    gradientFrom: "#6B7280",
+    gradientTo: "#6B7280",
 
     techStack: [
       "HTML5",
@@ -343,9 +343,9 @@ export const projects: Project[] = [
     tagline: "AI-powered resume screening and job matching platform for smarter hiring",
     category: "AI & ML",
     icon: "◈",
-    accentColor: "#10B981",
-    gradientFrom: "#10B981",
-    gradientTo: "#06B6D4",
+    accentColor: "#6B7280",
+    gradientFrom: "#6B7280",
+    gradientTo: "#5F86A5",
 
     techStack: [
       "React",

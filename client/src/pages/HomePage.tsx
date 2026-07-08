@@ -7,6 +7,8 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import MarqueeSection from "../components/Marquee";
 import CaseStudy from "../components/CaseStudy";
+import FeaturedProducts from "../components/FeaturedProducts";
+import { featuredProducts } from "../data/featuredProducts";
 
 function HomePage() {
   return (
@@ -20,6 +22,8 @@ function HomePage() {
           <Navbar />
 
           <HeroSection />
+
+          <FeaturedProducts projects={featuredProducts} />
 
           <MarqueeSection />
 

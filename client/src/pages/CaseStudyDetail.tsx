@@ -284,7 +284,7 @@ export default function CaseStudyDetail() {
 
         .csd-root {
           position: fixed; inset: 0;
-          background: #03060F;
+          background: #111827;
           font-family: 'DM Sans', sans-serif;
           --accent: ${project.accentColor};
           --accent-rgb: ${accentRgb};
@@ -343,7 +343,7 @@ export default function CaseStudyDetail() {
           border-radius: 100px; padding: 9px 20px;
           cursor: pointer; transition: all 0.25s ease; backdrop-filter: blur(10px);
         }
-        .csd-back-btn:hover { color: #fff; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.18); }
+        .csd-back-btn:hover { color: #FFFFFF; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.18); }
         .csd-topbar-name {
           font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
           letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.25);
@@ -507,7 +507,7 @@ export default function CaseStudyDetail() {
         .csd-tech-item:hover { background: rgba(var(--accent-rgb), 0.07); border-color: rgba(var(--accent-rgb), 0.2); }
         .csd-tech-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .csd-tech-num  { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; color: rgba(var(--accent-rgb), 0.6); letter-spacing: 0.05em; }
-        .csd-tech-name { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; color: #fff; }
+        .csd-tech-name { font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700; color: #FFFFFF; }
         .csd-tech-role { display: block; font-size: 12px; line-height: 1.55; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
         .csd-tech-bar  { height: 2px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
         .csd-tech-bar-fill { height: 100%; width: 0%; border-radius: 2px; background: linear-gradient(90deg, var(--grad-from), var(--grad-to)); animation: barFill 0.8s cubic-bezier(0.23,1,0.32,1) forwards; }
@@ -518,7 +518,7 @@ export default function CaseStudyDetail() {
         .csd-impact-metric {
           display: block; font-family: 'Sora', sans-serif; font-size: clamp(20px, 3vw, 32px);
           font-weight: 300; letter-spacing: -0.04em;
-          background: linear-gradient(130deg, #fff 30%, var(--accent) 100%);
+          background: linear-gradient(130deg, #FFFFFF 30%, var(--accent) 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
           line-height: 1; margin-bottom: 6px;
         }
@@ -533,7 +533,7 @@ export default function CaseStudyDetail() {
         .csd-arch-ring-3 { inset: -40px; animation-delay: 1s; }
         @keyframes ringPulse { 0%, 100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.03); } }
         .csd-arch-icon-wrap { width: 64px; height: 64px; border-radius: 18px; border: 1px solid; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-        .csd-arch-title { font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .csd-arch-title { font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: #FFFFFF; margin-bottom: 12px; }
         .csd-arch-body  { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 24px; }
         .csd-arch-body strong { color: rgba(255,255,255,0.75); }
         .csd-arch-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; padding: 7px 18px; border-radius: 100px; border: 1px solid; }
@@ -541,7 +541,7 @@ export default function CaseStudyDetail() {
         /* ── Architecture overlay ── */
         .csd-arch-overlay {
           position: absolute; inset: 0; z-index: 100;
-          background: #03060F;
+          background: #111827;
           animation: archFadeIn 0.35s ease forwards;
         }
         @keyframes archFadeIn {
@@ -549,9 +549,9 @@ export default function CaseStudyDetail() {
           to   { opacity: 1; transform: scale(1); }
         }
 
-        .csd-not-found { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #03060F; color: #fff; gap: 20px; font-family: 'DM Sans', sans-serif; }
+        .csd-not-found { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #111827; color: #FFFFFF; gap: 20px; font-family: 'DM Sans', sans-serif; }
         .csd-not-found button { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); padding: 10px 24px; border-radius: 100px; cursor: pointer; font-size: 14px; transition: all 0.2s ease; }
-        .csd-not-found button:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        .csd-not-found button:hover { background: rgba(255,255,255,0.06); color: #FFFFFF; }
 
         /* ── React Flow node reset ── */
         .react-flow__node {

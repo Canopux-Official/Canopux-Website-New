@@ -64,7 +64,7 @@ function Terms() {
             <h2>6. Privacy &amp; Data</h2>
             <p>
               Your use of our services is governed by our{" "}
-              <a href="/privacy" style={{ color: "#3a7bd5" }}>Privacy Policy</a>.
+              <a href="/privacy" style={{ color: "#5F86A5" }}>Privacy Policy</a>.
               We take reasonable measures to protect your data but cannot guarantee absolute security.
             </p>
           </div>
@@ -74,7 +74,7 @@ function Terms() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p>
-               <a href="mailto:support@canopux.org" style={{ color: "#3a7bd5" }}>
+               <a href="mailto:support@canopux.org" style={{ color: "#5F86A5" }}>
                 support@canopux.org
               </a>
             </p>

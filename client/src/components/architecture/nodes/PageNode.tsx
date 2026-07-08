@@ -10,7 +10,7 @@ export type PageNodeData = {
 };
 
 export default function PageNode({ data }: { data: PageNodeData }) {
-  const accent = data.accentColor ?? "#10B981";
+  const accent = data.accentColor ?? "#5F86A5";
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function PageNode({ data }: { data: PageNodeData }) {
 
         <div
           style={{
-            color: data.isRoot ? accent : "#e8e8e8",
+            color: data.isRoot ? accent : "#E5E7EB",
             fontFamily: "'DM Sans', 'Inter', sans-serif",
             fontWeight: data.isRoot ? 700 : 500,
             fontSize: data.isRoot ? "13px" : "11.5px",

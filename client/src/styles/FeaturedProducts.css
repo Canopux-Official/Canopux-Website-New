@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=Sora:wght@600;700;800;900&display=swap");
+
+.fp-section {
+  position: relative;
+  background: #f8f9fa;
+  padding: clamp(68px, 9vw, 120px) 0 clamp(54px, 7vw, 92px);
+  overflow: hidden;
+  font-family: "DM Sans", sans-serif;
+}
+
+.fp-container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.fp-header {
+  max-width: 760px;
+  margin: 0 auto clamp(28px, 4vw, 44px);
+  text-align: center;
+}
+
+.fp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6B7280;
+}
+
+.fp-title {
+  margin-top: 10px;
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2rem, 4.3vw, 3.55rem);
+  letter-spacing: -0.04em;
+  line-height: 1.07;
+  color: #111827;
+}
+
+.fp-tagline {
+  margin-top: 12px;
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  color: #111827;
+  font-weight: 500;
+}
+
+.fp-description {
+  margin: 12px auto 0;
+  max-width: 680px;
+  font-size: clamp(0.95rem, 1.15vw, 1.06rem);
+  line-height: 1.8;
+  color: #6B7280;
+}
+
+.fp-browser {
+  position: relative;
+  width: 100%;
+  border-radius: 26px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.06);
+  background: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.fp-browser-top {
+  height: 46px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  background: linear-gradient(180deg, rgba(241, 245, 249, 0.92) 0%, rgba(248, 250, 252, 0.86) 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.fp-browser-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fp-browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.fp-browser-dots span:nth-child(1) {
+  background: #F8F9FA;
+}
+.fp-browser-dots span:nth-child(2) {
+  background: #5F86A5;
+}
+.fp-browser-dots span:nth-child(3) {
+  background: #6B7280;
+}
+
+.fp-browser-body {
+  position: relative;
+  padding: clamp(12px, 2vw, 20px);
+  min-height: clamp(220px, 44vw, 610px);
+  background: #ffffff;
+}
+
+.fp-image-wrap {
+  margin: 0;
+  width: 100%;
+}
+
+.fp-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  object-fit: contain;
+  background: #ffffff;
+  display: block;
+  filter: contrast(1.08) saturate(1.07) brightness(1.03);
+  box-shadow:
+    0 10px 22px rgba(15, 23, 42, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  transform: translateZ(0);
+  will-change: transform, opacity, filter;
+  image-rendering: auto;
+}
+
+.fp-details-wrap {
+  margin-top: clamp(20px, 3.5vw, 28px);
+  min-height: 110px;
+}
+
+.fp-details {
+  text-align: center;
+}
+
+.fp-project-name {
+  font-family: "Sora", sans-serif;
+  color: #111827;
+  font-size: clamp(1.18rem, 1.7vw, 1.56rem);
+  letter-spacing: -0.02em;
+}
+
+.fp-project-description {
+  margin-top: 8px;
+  color: #6B7280;
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  line-height: 1.65;
+}
+
+.fp-tech-list {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fp-tech-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  background: rgba(248, 250, 252, 0.85);
+  font-size: 0.74rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .fp-container {
+    width: min(1200px, calc(100% - 30px));
+  }
+
+  .fp-browser {
+    border-radius: 22px;
+  }
+
+  .fp-browser-top {
+    height: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fp-section {
+    padding: 58px 0 48px;
+  }
+
+  .fp-header {
+    margin-bottom: 24px;
+  }
+
+  .fp-browser {
+    border-radius: 18px;
+  }
+
+  .fp-browser-top {
+    height: 40px;
+    padding: 0 14px;
+  }
+
+  .fp-browser-body {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .fp-image {
+    border-radius: 10px;
+  }
+
+  .fp-details-wrap {
+    margin-top: 18px;
+    min-height: 104px;
+  }
+}

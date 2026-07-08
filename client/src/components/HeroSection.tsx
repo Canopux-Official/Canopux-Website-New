@@ -37,7 +37,7 @@ function useParticles(count = 55) {
       vx: (Math.random() - 0.5) * 0.28,
       vy: (Math.random() - 0.5) * 0.28,
       alpha: Math.random() * 0.5 + 0.15,
-      color: Math.random() > 0.5 ? "45,212,191" : "59,130,246",
+      color: Math.random() > 0.5 ? "156,187,203" : "92,122,138",
     }));
 
     const draw = () => {
@@ -52,7 +52,7 @@ function useParticles(count = 55) {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < 110) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(59,130,246,${0.06 * (1 - d / 110)})`;
+            ctx.strokeStyle = `rgba(156,187,203,${0.04 * (1 - d / 110)})`;
             ctx.lineWidth = 0.6;
             ctx.moveTo(pts[i].x, pts[i].y);
             ctx.lineTo(pts[j].x, pts[j].y);
@@ -89,14 +89,37 @@ function useParticles(count = 55) {
 }
 
 
+const AUDIENCE_WORDS = [
+  "Startups",
+  "Founders",
+  "Enterprises",
+  "Creators",
+  "Brands",
+];
+
 export default function HeroSection() {
   const canvasRef = useParticles(60);
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
   const [activeService, setActiveService] = useState(0);
+  const [audienceIndex, setAudienceIndex] = useState(0);
+  const [audienceVisible, setAudienceVisible] = useState(true);
   const heroRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     const t = setInterval(() => setActiveService(p => (p + 1) % 4), 2600);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAudienceVisible(false);
+      window.setTimeout(() => {
+        setAudienceIndex((index) => (index + 1) % AUDIENCE_WORDS.length);
+        setAudienceVisible(true);
+      }, 320);
+    }, 2800);
+
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -119,17 +142,12 @@ export default function HeroSection() {
     }
   };
 
-  const scrollToCaseStudies = () => {
-    const section = document.getElementById("case-studies");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   const services = [
-    { icon: "🌐", label: "Web Development", color: "#2dd4bf" },
-    { icon: "🤖", label: "AI & ML", color: "#3b82f6" },
-    { icon: "📱", label: "App Development", color: "#6366f1" },
-    { icon: "☁️", label: "Cloud & DevOps", color: "#2dd4bf" },
+    { label: "React", color: "#5F86A5" },
+    { label: "Next.js", color: "#5F86A5" },
+    { label: "NestJS", color: "#5F86A5" },
+    { label: "Python", color: "#5F86A5" },
+    { label: "AWS", color: "#5F86A5" },
   ];
 
   const px = (mouse.x - 0.5) * 22;
@@ -170,79 +188,49 @@ export default function HeroSection() {
             stroke="url(#hexG1)" strokeWidth="0.6" fill="none" opacity="0.15" />
           {/* Corner glow dots */}
           {[[350, 40], [630, 198], [630, 514], [350, 672], [70, 514], [70, 198]].map(([cx, cy], i) => (
-            <circle key={i} cx={cx} cy={cy} r="5" fill={i % 2 === 0 ? "#2dd4bf" : "#3b82f6"} opacity="0.35" />
+            <circle key={i} cx={cx} cy={cy} r="5" fill={i % 2 === 0 ? "#5F86A5" : "#5F86A5"} opacity="0.28" />
           ))}
           <defs>
             <linearGradient id="hexG1" x1="0" y1="0" x2="700" y2="700" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.6" />
+              <stop offset="0%" stopColor="#5F86A5" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#5F86A5" stopOpacity="0.35" />
             </linearGradient>
             <linearGradient id="hexG2" x1="700" y1="0" x2="0" y2="700" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.5" />
+              <stop offset="0%" stopColor="#5F86A5" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#5F86A5" stopOpacity="0.3" />
             </linearGradient>
           </defs>
         </svg>
 
-        {/* ── FLOATING GLASS CARDS ── */}
-        <div className="float-card fc-left" style={{ transform: `translate(${-px * 0.3}px, ${-py * 0.25}px)` }}>
-          <div className="fc-title"><span className="fc-title-dot" />Performance</div>
-          <div className="fc-value">99.97%</div>
-          <div className="fc-bar-bg"><div className="fc-bar-fill" /></div>
-          <div style={{ fontSize: "0.68rem", color: "#94a3b8", marginTop: "6px" }}>Platform uptime SLA</div>
-        </div>
-
-        <div className="float-card fc-right" style={{ transform: `translate(${px * 0.35}px, ${py * 0.2}px)` }}>
-          <div className="fc-title"><span className="fc-title-dot" />Activity</div>
-          <div className="fc-pulse-row">
-            {["fc-pb-1", "fc-pb-2", "fc-pb-3", "fc-pb-4", "fc-pb-5", "fc-pb-6"].map(c => (
-              <div key={c} className={`fc-pulse-bar ${c}`} />
-            ))}
-          </div>
-          <div className="fc-tag-row" style={{ marginTop: "10px" }}>
-            <span className="fc-tag">Websites</span>
-            <span className="fc-tag">App</span>
-            <span className="fc-tag">AI/ML</span>
-          </div>
-        </div>
-
-        <div className="float-card fc-top" style={{ transform: `translate(${px * 0.2}px, ${-py * 0.3}px)` }}>
-          <div className="fc-title"><span className="fc-title-dot" />Client Rating</div>
-          <div className="fc-number">4.9 ★</div>
-          <div className="fc-online">Based on 60+ reviews</div>
-          <div className="fc-online">12 online now</div>
-        </div>
-
         {/* ── MAIN CONTENT ── */}
         <div className="hero-body">
 
-          {/* Status pill */}
-          <div className="status-pill">
-            <div className="pill-dot-wrap"><div className="pill-dot" /></div>
-            60+ successful projects delivered         </div>
-
           {/* Headline */}
           <div className="headline-wrap">
-            <span className="h-pre">Powering startups and enterprises</span>
-            <h1 className="h-main">
-              <span className="word-outline">Build</span>
-              {" "}
-              <span className="word-grad">Smarter.</span>
-            </h1>
-            <span className="h-sub-line">
-              Ship Faster.&nbsp;
-              <span className="h-rotating">
-                <span className="h-rotating-inner">
-                  {["Grow Bigger.", "Scale Better.", "Lead Markets.", "Win Always."][activeService]}
+            <p className="h-pre">
+              <span className="h-pre-fixed">Powering</span>
+              <span
+                className="h-pre-rotator"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <span
+                  className={`h-pre-word${audienceVisible ? " is-visible" : " is-hidden"}`}
+                >
+                  {AUDIENCE_WORDS[audienceIndex]}
                 </span>
               </span>
-            </span>
+            </p>
+            <h1 className="h-main">
+              We Build{" "}
+              <span className="word-grad">Digital Products</span>
+            </h1>
+            <span className="h-sub-line h-love-word">That People Actually Love!</span>
           </div>
 
           {/* Description */}
           <p className="hero-desc">
-            We engineer <strong>AI systems, modern web platforms, and intelligent automation solutions </strong>
-            that give ambitious businesses a measurable edge — from first line of code to launch and beyond.
+            We design, build, and scale software that solves real business problems—from AI-powered platforms to modern web applications and enterprise systems.
           </p>
 
           {/* CTAs */}
@@ -255,19 +243,9 @@ export default function HeroSection() {
                 scrollToContact();
               }}
             >              <span>
-                Let's Collaborate
+                Start Your Project
                 <span className="btn-arrow">→</span>
               </span>
-            </a>
-
-            <a
-              href="#case-studies"
-              className="btn-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToCaseStudies();
-              }}
-            >              Explore Our Work
             </a>
           </div>
 
@@ -280,7 +258,6 @@ export default function HeroSection() {
                 onClick={() => setActiveService(i)}
                 onMouseEnter={() => setActiveService(i)}
               >
-                <span className="svc-tab-icon">{s.icon}</span>
                 {s.label}
               </button>
             ))}

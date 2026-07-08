@@ -8,7 +8,7 @@ export type OutputNodeData = {
 };
 
 export default function OutputNode({ data }: { data: OutputNodeData }) {
-  const accent = data.accentColor ?? "#10B981";
+  const accent = data.accentColor ?? "#5F86A5";
   const sel = data.isSelected;
 
   return (

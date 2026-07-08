@@ -10,8 +10,8 @@ const SERVICES = [
     desc: "We craft pixel-perfect, performance-first web applications using the modern stack. From marketing sites to complex SaaS dashboards — every pixel ships with purpose.",
     tags: ["React", "Next.js", "Node.js", "TypeScript", "Tailwind", "PostgreSQL"],
     outcomes: ["3× faster load times", "99+ Lighthouse score", "SEO-first architecture"],
-    accent: "#2dd4bf",
-    accentB: "#3b82f6",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <rect x="4" y="10" width="48" height="34" rx="5" stroke={c} strokeWidth="1.4" />
@@ -30,8 +30,8 @@ const SERVICES = [
     desc: "From custom LLM pipelines to computer vision and predictive analytics — we build AI that solves real business problems, not demos. Models that integrate deeply into your product.",
     tags: ["Python", "PyTorch", "LangChain", "OpenAI", "HuggingFace", "MLflow"],
     outcomes: ["Custom-trained models", "Real-time inference APIs", "RAG & LLM pipelines"],
-    accent: "#3b82f6",
-    accentB: "#6366f1",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <circle cx="28" cy="28" r="9" stroke={c} strokeWidth="1.4" />
@@ -55,8 +55,8 @@ const SERVICES = [
     desc: "We design and deploy intelligent automation workflows that eliminate manual work — from document processing to multi-system orchestration and beyond.",
     tags: ["n8n", "Zapier", "Python", "Selenium", "Playwright", "REST APIs"],
     outcomes: ["80% reduction in manual tasks", "24/7 autonomous workflows", "Zero-error data pipelines"],
-    accent: "#2dd4bf",
-    accentB: "#10b981",
+    accent: "#5F86A5",
+    accentB: "#6B7280",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <rect x="4" y="18" width="14" height="10" rx="3" stroke={c} strokeWidth="1.4" />
@@ -78,8 +78,8 @@ const SERVICES = [
     desc: "Cloud-native infrastructure with CI/CD pipelines, container orchestration, and infrastructure-as-code — ship more, worry less, scale infinitely.",
     tags: ["AWS", "GCP", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
     outcomes: ["Auto-scaling infrastructure", "CI/CD in < 5 min", "Cost-optimised cloud spend"],
-    accent: "#6366f1",
-    accentB: "#3b82f6",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <ellipse cx="28" cy="20" rx="17" ry="8" stroke={c} strokeWidth="1.4" />
@@ -98,8 +98,8 @@ const SERVICES = [
     desc: "Robust data platforms — pipelines, warehouses, dashboards — that transform raw data into executive-level decisions. Real-time analytics that make teams genuinely data-driven.",
     tags: ["Apache Spark", "dbt", "Snowflake", "Airflow", "Kafka", "Looker"],
     outcomes: ["Real-time data pipelines", "Unified data warehouse", "Executive dashboards"],
-    accent: "#f59e0b",
-    accentB: "#3b82f6",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <path d="M6 44h44" stroke={c} strokeWidth="1.4" strokeLinecap="round" />
@@ -122,8 +122,8 @@ const SERVICES = [
     desc: "We audit, harden, and monitor your digital assets — from application penetration testing to compliance frameworks and incident response. Security that's proactive, not reactive.",
     tags: ["OWASP", "Pen Testing", "SOC 2", "ISO 27001", "SIEM", "Zero Trust"],
     outcomes: ["Zero critical vulnerabilities", "Compliance-ready posture", "24/7 threat monitoring"],
-    accent: "#10b981",
-    accentB: "#2dd4bf",
+    accent: "#6B7280",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <path d="M28 6L46 14v18c0 11-9 18-18 23C9 50 2 43 2 32V14L28 6z" stroke={c} strokeWidth="1.4" />
@@ -140,8 +140,8 @@ const SERVICES = [
     desc: "We build cross-platform and native mobile apps that feel buttery smooth — from consumer apps to enterprise tools. Performance, offline support, and app-store polish baked in from day one.",
     tags: ["React Native", "Flutter", "Swift", "Kotlin", "Expo", "Firebase"],
     outcomes: ["iOS & Android from one codebase", "60fps buttery animations", "App Store ready in 6 weeks"],
-    accent: "#e879f9",
-    accentB: "#6366f1",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <rect x="16" y="4" width="24" height="48" rx="5" stroke={c} strokeWidth="1.4" />
@@ -161,8 +161,8 @@ const SERVICES = [
     desc: "Strategy-led design that bridges business goals and user needs. We go from research and wireframes to pixel-perfect Figma files and interactive prototypes — fully ready for dev handoff.",
     tags: ["Figma", "Prototyping", "User Research", "Design Systems", "Framer", "A/B Testing"],
     outcomes: ["40% higher conversion rates", "Full design system delivered", "Dev-ready in Figma"],
-    accent: "#f472b6",
-    accentB: "#a855f7",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <circle cx="20" cy="18" r="8" stroke={c} strokeWidth="1.4" />
@@ -184,8 +184,8 @@ const SERVICES = [
     desc: "From smart contracts and DeFi protocols to NFT platforms and DAO tooling — we architect and audit blockchain systems that are secure, gas-optimised, and built to last.",
     tags: ["Solidity", "Ethereum", "Hardhat", "IPFS", "Wagmi", "The Graph"],
     outcomes: ["Gas-optimised smart contracts", "Full audit reports", "EVM & L2 deployment"],
-    accent: "#fb923c",
-    accentB: "#f59e0b",
+    accent: "#5F86A5",
+    accentB: "#5F86A5",
     icon: (c: string) => (
       <svg viewBox="0 0 56 56" fill="none" width="100%" height="100%">
         <polygon points="28,6 44,16 44,36 28,46 12,36 12,16" stroke={c} strokeWidth="1.4" fill="none" />
@@ -319,9 +319,9 @@ export default function Services() {
             {/* Stats */}
             <div className="sv-stats">
               {[
-                { icon: "🚀", num: "60+", label: "Projects Delivered" },
-                { icon: "⭐", num: "99.97%", label: "Client Retention" },
-                { icon: "🌍", num: "10+", label: "Industries Served" },
+                { icon: "◦", num: "60+", label: "Projects Delivered" },
+                { icon: "—", num: "99.97%", label: "Client Retention" },
+                { icon: "◎", num: "10+", label: "Industries Served" },
               ].map((m, i) => (
                 <div className="sv-stat-cell" key={i}>
                   <div className="sv-stat-icon">{m.icon}</div>
@@ -350,7 +350,7 @@ export default function Services() {
                     <div className="sv-card-top">
                       <span className="sv-card-num">{s.num}</span>
                       <div className="sv-card-icon" aria-hidden="true">
-                        {s.icon(isActive ? s.accent : "#cbd5e1")}
+                        {s.icon(isActive ? s.accent : "#E5E7EB")}
                       </div>
                     </div>
                     <h3 className="sv-card-name">{s.title}</h3>

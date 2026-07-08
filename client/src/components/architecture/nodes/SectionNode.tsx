@@ -8,7 +8,7 @@ export type SectionNodeData = {
 };
 
 export default function SectionNode({ data }: { data: SectionNodeData }) {
-  const accent = data.accentColor ?? "#10B981";
+  const accent = data.accentColor ?? "#5F86A5";
 
   return (
     <>

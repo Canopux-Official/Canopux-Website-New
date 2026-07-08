@@ -8,7 +8,7 @@
   padding: 0;
 }
 
-/* ===== Section - PURE WHITE ===== */
+/* ===== Section - stone ===== */
 .mq-section {
   position: relative;
   background: #ffffff;
@@ -59,13 +59,13 @@
 .mq-divider-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+  background: linear-gradient(90deg, transparent, #f8f9fa, transparent);
 }
 
 .mq-divider-label {
   font-size: 0.65rem;
   font-weight: 600;
-  color: #64748b;
+  color: #6B7280;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -118,7 +118,7 @@
   border-radius: 50%;
   border: 1px solid #e5e7eb;
   background: #ffffff;
-  color: #475569;
+  color: #6B7280;
   cursor: pointer;
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.06),
@@ -132,8 +132,8 @@
 
 .mq-arrow:hover:not(:disabled) {
   transform: scale(1.06);
-  color: #0f172a;
-  border-color: #cbd5e1;
+  color: #111827;
+  border-color: #E5E7EB;
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.1),
     0 2px 8px rgba(0, 0, 0, 0.06);
@@ -144,7 +144,7 @@
 }
 
 .mq-arrow:focus-visible {
-  outline: 2px solid #94a3b8;
+  outline: 2px solid #6B7280;
   outline-offset: 2px;
 }
 

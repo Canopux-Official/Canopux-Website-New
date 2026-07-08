@@ -2,17 +2,17 @@
 
 .privacy-wrapper {
     min-height: 100vh;
-    background: #f7f7f5;
+    background: #ffffff;
     padding: 48px 20px;
     font-family: 'Inter', sans-serif;
-    color: #222;
+    color: #111827;
 }
 
 .privacy-container {
     max-width: 680px;
     margin: 0 auto;
-    background: #fff;
-    border: 1px solid #e5e5e2;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
     border-radius: 8px;
     padding: 48px 52px;
 }
@@ -21,21 +21,21 @@
     font-size: 26px;
     font-weight: 600;
     margin: 0 0 6px;
-    color: #111;
+    color: #111827;
 }
 
 .privacy-meta {
     font-size: 13px;
-    color: #999;
+    color: #6B7280;
     margin-bottom: 28px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .privacy-intro {
     font-size: 14.5px;
     line-height: 1.75;
-    color: #555;
+    color: #6B7280;
     margin-bottom: 32px;
 }
 
@@ -46,7 +46,7 @@
 .privacy-section h2 {
     font-size: 15px;
     font-weight: 600;
-    color: #111;
+    color: #111827;
     margin: 0 0 10px;
 }
 
@@ -54,7 +54,7 @@
 .privacy-section li {
     font-size: 14px;
     line-height: 1.75;
-    color: #555;
+    color: #6B7280;
     margin: 0 0 6px;
 }
 
@@ -64,22 +64,22 @@
 }
 
 .privacy-section li::marker {
-    color: #bbb;
+    color: #E5E7EB;
 }
 
 .privacy-divider {
     border: none;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #E5E7EB;
     margin: 32px 0;
 }
 
 .privacy-contact {
     font-size: 14px;
-    color: #555;
+    color: #6B7280;
 }
 
 .privacy-contact a {
-    color: #3a7bd5;
+    color: #5F86A5;
     text-decoration: none;
 }
 

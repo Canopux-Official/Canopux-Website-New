@@ -34,7 +34,7 @@ const VALUES = [
         <circle cx="20" cy="20" r="2" fill="url(#vg1)" />
         <defs>
           <linearGradient id="vg1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" />
           </linearGradient>
         </defs>
       </svg>
@@ -49,7 +49,7 @@ const VALUES = [
         <path d="M22 4L8 22h12l-2 14 14-18H20L22 4z" stroke="url(#vg2)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
         <defs>
           <linearGradient id="vg2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" />
           </linearGradient>
         </defs>
       </svg>
@@ -66,7 +66,7 @@ const VALUES = [
         <circle cx="20" cy="20" r="1.5" fill="url(#vg3)" />
         <defs>
           <linearGradient id="vg3" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" />
           </linearGradient>
         </defs>
       </svg>
@@ -81,7 +81,7 @@ const VALUES = [
         <path d="M20 4l4 8h9l-7 6 3 9-9-5-9 5 3-9-7-6h9L20 4z" stroke="url(#vg4)" strokeWidth="1.4" strokeLinejoin="round" />
         <defs>
           <linearGradient id="vg4" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2dd4bf" /><stop offset="100%" stopColor="#3b82f6" />
+            <stop offset="0%" stopColor="#5F86A5" /><stop offset="100%" stopColor="#5F86A5" />
           </linearGradient>
         </defs>
       </svg>

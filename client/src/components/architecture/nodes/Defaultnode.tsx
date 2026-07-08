@@ -8,7 +8,7 @@ export type DefaultNodeData = {
 };
 
 export default function DefaultNode({ data }: { data: DefaultNodeData }) {
-  const accent = data.accentColor ?? "#10B981";
+  const accent = data.accentColor ?? "#5F86A5";
   const sel = data.isSelected;
 
   return (
@@ -69,7 +69,7 @@ export default function DefaultNode({ data }: { data: DefaultNodeData }) {
         </div>
 
         <div style={{
-          color: sel ? "#f2f2f2" : "rgba(255,255,255,0.72)",
+          color: sel ? "#F8F9FA" : "rgba(255,255,255,0.72)",
           fontFamily: "'DM Sans', 'Inter', sans-serif",
           fontWeight: 700,
           fontSize: "12.5px",
