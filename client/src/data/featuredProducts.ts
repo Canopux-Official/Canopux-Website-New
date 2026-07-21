@@ -6,6 +6,7 @@ import constructhubImage from "../assets/showcase/constructhub.png";
 import mathSuperhighwayImage from "../assets/showcase/math-superhighway.png";
 import madeInCartImage from "../assets/showcase/madeincart.png";
 import kkrMahilaImage from "../assets/showcase/kkr-mahila.png";
+import sriJagannathTradersImage from "../assets/showcase/Sri Jagannath Traders hero.png";
 
 export type FeaturedProduct = {
   id: string;
@@ -79,6 +80,14 @@ export const featuredProducts: FeaturedProduct[] = [
     description: "School website crafted around trust, clarity, and admissions.",
     image: kkrMahilaImage,
     imageAlt: "KKR Mahila school website screenshot",
+    techStack: ["React", "Brand UI", "Content"],
+  },
+  {
+    id: "sri-jagannath-traders",
+    name: "Sri Jagannath Traders",
+    description: "Premium steel distributor website for product catalogues, industries, and bulk supply.",
+    image: sriJagannathTradersImage,
+    imageAlt: "Sri Jagannath Traders website hero screenshot",
     techStack: ["React", "Brand UI", "Content"],
   },
 ];

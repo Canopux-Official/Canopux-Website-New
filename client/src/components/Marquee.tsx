@@ -11,55 +11,78 @@ import kkrMahilaLogo from "../assets/kkr-mahila-logo.png";
 import priyaanshiiLogo from "../assets/priyaanshii-tasteworks-logo.png";
 import shipMyParcelLogo from "../assets/ship-my-parcel-logo.png";
 import madeInCartLogo from "../assets/made-in-cart-logo.png";
+import jagannathTradersLogo from "../assets/sri-jagannath-traders-logo.png";
 
 const AUTO_SCROLL_DURATION = 38;
 
+type PartnerLogo = {
+  src: string;
+  name: string;
+  alt: string;
+  url: string;
+};
+
 /* Partner logos with descriptive alt text */
-const logos = [
+const logos: PartnerLogo[] = [
+  {
+    src: jagannathTradersLogo,
+    name: "Sri Jagannath Traders",
+    alt: "Sri Jagannath Traders logo",
+    url: "https://www.srijagannathtraders.in/",
+  },
   {
     src: img4,
     name: "IEEE",
     alt: "IEEE partner logo",
+    url: "https://www.indocrypt2025.in/",
   },
   {
     src: img1,
     name: "IEEE InGARSS 2025",
     alt: "IEEE InGARSS 2025 partner logo",
+    url: "https://www.ingarss-2025.in/",
   },
   {
     src: img3,
     name: "IIIT Bhubaneswar",
     alt: "IIIT Bhubaneswar partner logo",
+    url: "https://www.indocrypt2025.in/",
   },
   {
     src: img6,
     name: "JJ Institute of Science",
     alt: "JJ Institute of Science partner logo",
+    url: "https://www.jjinstitute.in/",
   },
   {
     src: kkrMahilaLogo,
     name: "KKR Mahila Higher Secondary School",
     alt: "KKR Mahila Higher Secondary School partner logo",
+    url: "https://www.kkrmahilahsschool.in/",
   },
   {
     src: madeInCartLogo,
     name: "Made in Cart",
     alt: "Made in Cart partner logo",
+    url: "https://www.madeincart.in/",
   },
   {
     src: mathSuperhighwayLogo,
     name: "MATH SUPERHIGHWAY",
     alt: "MATH SUPERHIGHWAY partner logo",
+    url: "https://www.mathsuperhighway.com/",
   },
   {
     src: priyaanshiiLogo,
     name: "Priyaanshii Tasteworks Pvt. Ltd.",
     alt: "Priyaanshii Tasteworks Pvt. Ltd. partner logo",
+    url: "https://www.priyaanshiitasteworks.in/",
   },
   {
     src: shipMyParcelLogo,
     name: "Ship My Parcel",
     alt: "Ship My Parcel partner logo",
+    url: "https://www.shipmyparcel.in/",
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -189,12 +212,19 @@ export default function MarqueeSection() {
                 className="logo-card"
                 aria-hidden={i >= logos.length}
               >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  loading="lazy"
-                  draggable={false}
-                />
+                <a
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${logo.name} website`}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </a>
               </figure>
             ))}
           </div>
