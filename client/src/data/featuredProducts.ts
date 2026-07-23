@@ -8,6 +8,7 @@ import madeInCartImage from "../assets/showcase/madeincart.png";
 import kkrMahilaImage from "../assets/showcase/kkr-mahila.png";
 import sriJagannathTradersImage from "../assets/showcase/Sri Jagannath Traders hero.png";
 import newDarshanJewelleryImage from "../assets/showcase/New-Darshan-Jewellery-hero.png";
+import priyaanshiiTasteworksImage from "../assets/showcase/Priyaanshii-Tasteworks-Hero.png";
 
 export type FeaturedProduct = {
   id: string;
@@ -98,5 +99,13 @@ export const featuredProducts: FeaturedProduct[] = [
     image: newDarshanJewelleryImage,
     imageAlt: "New Darshan Jewellery website hero screenshot",
     techStack: ["React", "Brand UI", "Commerce"],
+  },
+  {
+    id: "priyaanshii-tasteworks",
+    name: "Priyaanshii Tasteworks",
+    description: "Hospitality brand website spanning café, dining, and catering experiences.",
+    image: priyaanshiiTasteworksImage,
+    imageAlt: "Priyaanshii Tasteworks website hero screenshot",
+    techStack: ["React", "Brand UI", "Content"],
   },
 ];
