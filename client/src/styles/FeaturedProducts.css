@@ -54,6 +54,57 @@
   color: #6B7280;
 }
 
+.fp-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fp-carousel-stage {
+  flex: 1;
+  min-width: 0;
+}
+
+.fp-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.fp-arrow:hover {
+  transform: scale(1.06);
+  color: #111827;
+  border-color: #e5e7eb;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.fp-arrow:active {
+  transform: scale(0.96);
+}
+
+.fp-arrow:focus-visible {
+  outline: 2px solid #5f86a5;
+  outline-offset: 2px;
+}
+
 .fp-browser {
   position: relative;
   width: 100%;
@@ -191,6 +242,15 @@
 
   .fp-header {
     margin-bottom: 24px;
+  }
+
+  .fp-carousel {
+    gap: 8px;
+  }
+
+  .fp-arrow {
+    width: 40px;
+    height: 40px;
   }
 
   .fp-browser {

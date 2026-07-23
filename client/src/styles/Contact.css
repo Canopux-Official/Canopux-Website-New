@@ -523,6 +523,13 @@
   text-decoration: underline;
 }
 
+.ct-form-error {
+  display: block;
+  margin-top: 6px;
+  color: #b42318;
+  font-weight: 600;
+}
+
 .ct-btn-submit {
   position: relative;
   padding: 15px 34px;
@@ -555,6 +562,7 @@
   opacity: 0;
   transition: opacity 0.25s;
   border-radius: inherit;
+  pointer-events: none;
 }
 .ct-btn-submit:hover:not(:disabled) {
   transform: translateY(-2px);

@@ -12,6 +12,7 @@ import priyaanshiiLogo from "../assets/priyaanshii-tasteworks-logo.png";
 import shipMyParcelLogo from "../assets/ship-my-parcel-logo.png";
 import madeInCartLogo from "../assets/made-in-cart-logo.png";
 import jagannathTradersLogo from "../assets/sri-jagannath-traders-logo.png";
+import darshanJewelleryLogo from "../assets/New-Darshan-Jewellery-logo.png";
 
 const AUTO_SCROLL_DURATION = 38;
 
@@ -19,7 +20,7 @@ type PartnerLogo = {
   src: string;
   name: string;
   alt: string;
-  url: string;
+  url?: string;
 };
 
 /* Partner logos with descriptive alt text */
@@ -65,6 +66,12 @@ const logos: PartnerLogo[] = [
     name: "Made in Cart",
     alt: "Made in Cart partner logo",
     url: "https://www.madeincart.in/",
+  },
+  {
+    src: darshanJewelleryLogo,
+    name: "New Darshan Jewellery",
+    alt: "New Darshan Jewellery logo",
+    url: "https://www.newdarshanjewellery.com/",
   },
   {
     src: mathSuperhighwayLogo,
@@ -206,27 +213,37 @@ export default function MarqueeSection() {
 
         <div className="mq-track-wrap">
           <div className="mq-track" ref={trackRef}>
-            {repeated.map((logo, i) => (
-              <figure
-                key={i}
-                className="logo-card"
-                aria-hidden={i >= logos.length}
-              >
-                <a
-                  href={logo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${logo.name} website`}
+            {repeated.map((logo, i) => {
+              const image = (
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  draggable={false}
+                />
+              );
+
+              return (
+                <figure
+                  key={i}
+                  className="logo-card"
+                  aria-hidden={i >= logos.length}
                 >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    loading="lazy"
-                    draggable={false}
-                  />
-                </a>
-              </figure>
-            ))}
+                  {logo.url ? (
+                    <a
+                      href={logo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${logo.name} website`}
+                    >
+                      {image}
+                    </a>
+                  ) : (
+                    image
+                  )}
+                </figure>
+              );
+            })}
           </div>
         </div>
 

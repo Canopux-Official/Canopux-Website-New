@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo } from "react";
 import { useShowcaseAutoplay } from "../hooks/useShowcaseAutoplay";
 import type { FeaturedProduct } from "../data/featuredProducts";
@@ -52,7 +53,7 @@ function BrowserFrame({ project }: { project: FeaturedProduct }) {
 }
 
 export default function FeaturedProducts({ projects }: FeaturedProductsProps) {
-  const { activeIndex } = useShowcaseAutoplay({
+  const { activeIndex, goNext, goPrev } = useShowcaseAutoplay({
     itemCount: projects.length,
     enabled: true,
     intervalMs: 6200,
@@ -74,7 +75,29 @@ export default function FeaturedProducts({ projects }: FeaturedProductsProps) {
           </p>
         </header>
 
-        <BrowserFrame project={activeProject} />
+        <div className="fp-carousel">
+          <button
+            type="button"
+            className="fp-arrow fp-arrow-left"
+            onClick={goPrev}
+            aria-label="View previous project"
+          >
+            <ChevronLeft size={22} strokeWidth={2} />
+          </button>
+
+          <div className="fp-carousel-stage">
+            <BrowserFrame project={activeProject} />
+          </div>
+
+          <button
+            type="button"
+            className="fp-arrow fp-arrow-right"
+            onClick={goNext}
+            aria-label="View next project"
+          >
+            <ChevronRight size={22} strokeWidth={2} />
+          </button>
+        </div>
 
         <div className="fp-details-wrap">
           <AnimatePresence mode="wait">

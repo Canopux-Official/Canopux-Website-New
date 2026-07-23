@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 type UseShowcaseAutoplayOptions = {
   itemCount: number;
@@ -13,6 +13,7 @@ export function useShowcaseAutoplay({
 }: UseShowcaseAutoplayOptions) {
   const safeCount = useMemo(() => Math.max(1, itemCount), [itemCount]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [resetToken, setResetToken] = useState(0);
 
   useEffect(() => {
     if (activeIndex >= safeCount) {
@@ -28,9 +29,28 @@ export function useShowcaseAutoplay({
     }, intervalMs);
 
     return () => window.clearTimeout(timer);
-  }, [activeIndex, enabled, intervalMs, safeCount]);
+  }, [activeIndex, enabled, intervalMs, resetToken, safeCount]);
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (safeCount <= 1) return;
+      setActiveIndex(((index % safeCount) + safeCount) % safeCount);
+      setResetToken((token) => token + 1);
+    },
+    [safeCount],
+  );
+
+  const goNext = useCallback(() => {
+    goTo(activeIndex + 1);
+  }, [activeIndex, goTo]);
+
+  const goPrev = useCallback(() => {
+    goTo(activeIndex - 1);
+  }, [activeIndex, goTo]);
 
   return {
     activeIndex,
+    goNext,
+    goPrev,
   };
 }

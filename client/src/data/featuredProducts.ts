@@ -7,6 +7,7 @@ import mathSuperhighwayImage from "../assets/showcase/math-superhighway.png";
 import madeInCartImage from "../assets/showcase/madeincart.png";
 import kkrMahilaImage from "../assets/showcase/kkr-mahila.png";
 import sriJagannathTradersImage from "../assets/showcase/Sri Jagannath Traders hero.png";
+import newDarshanJewelleryImage from "../assets/showcase/New-Darshan-Jewellery-hero.png";
 
 export type FeaturedProduct = {
   id: string;
@@ -89,5 +90,13 @@ export const featuredProducts: FeaturedProduct[] = [
     image: sriJagannathTradersImage,
     imageAlt: "Sri Jagannath Traders website hero screenshot",
     techStack: ["React", "Brand UI", "Content"],
+  },
+  {
+    id: "new-darshan-jewellery",
+    name: "New Darshan Jewellery",
+    description: "Premium gold and silver jewellery brand website for collections and celebrations.",
+    image: newDarshanJewelleryImage,
+    imageAlt: "New Darshan Jewellery website hero screenshot",
+    techStack: ["React", "Brand UI", "Commerce"],
   },
 ];
